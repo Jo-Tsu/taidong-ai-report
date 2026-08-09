@@ -1,0 +1,302 @@
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] {
+  color: #f8fbff;
+  overflow: hidden;
+}
+
+.deck[data-mode="present"] .slide-frame:has(> .slide[data-slide-key="insta360-dealer-mail-ai"]) {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(20, 86, 240, .22), transparent 34%),
+    radial-gradient(circle at 84% 72%, rgba(60, 127, 255, .12), transparent 36%),
+    linear-gradient(rgba(255, 255, 255, .012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .010) 1px, transparent 1px),
+    linear-gradient(135deg, #020713, #071426 58%, #030810);
+  background-size: auto, auto, 64px 64px, 64px 64px, auto;
+}
+
+.deck[data-mode="scroll"] .slide[data-slide-key="insta360-dealer-mail-ai"] {
+  background:
+    radial-gradient(circle at 18% 22%, rgba(20, 86, 240, .22), transparent 34%),
+    radial-gradient(circle at 84% 72%, rgba(60, 127, 255, .12), transparent 36%),
+    linear-gradient(135deg, #020713, #071426 58%, #030810);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .wordmark {
+  position: absolute;
+  top: 61px;
+  right: 124px;
+  width: 160px;
+  height: 50px;
+  background: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') left center/contain no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  z-index: 80;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-client-logo {
+  position: absolute;
+  top: 61px;
+  right: 341px;
+  width: 105px;
+  height: 50px;
+  border-radius: 8px;
+  border: 0;
+  background-color: #fff;
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/input/insta360-dealer-mail-ai.png');
+  background-repeat: no-repeat;
+  background-size: 1600px 900px;
+  background-position: -1256px -49px;
+  z-index: 82;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  font-family: var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .header {
+  position: absolute;
+  top: 61px;
+  left: 73px;
+  right: 490px;
+  z-index: 70;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .title-zh {
+  margin: 0;
+  font: 600 48px/1.2 var(--fs-font-cjk);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .page-sub {
+  margin: 18px 0 0;
+  max-width: 1320px;
+  font: 500 28px/1.35 var(--fs-font-cjk);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-content {
+  position: absolute;
+  left: 73px;
+  right: 73px;
+  top: 252px;
+  bottom: 64px;
+  display: grid;
+  grid-template-columns: 470px minmax(0, 1fr);
+  gap: 32px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-summary, .slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence {
+  border: 1px solid rgba(164, 194, 255, .18);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.070), rgba(255,255,255,.030)),
+    rgba(4,13,27,.80);
+  overflow: hidden;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-summary {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-brand-card {
+  min-height: 122px;
+  padding: 20px 22px;
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid rgba(60,127,255,.38);
+  border-radius: 8px;
+  background: rgba(60,127,255,.11);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-brand-card > strong {
+  font: 900 48px/1 var(--fs-font-latin);
+  color: #62e3d1;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-brand-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-brand-card b {
+  font: 700 24px/1.25 var(--fs-font-cjk);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-brand-card span {
+  font: 500 24px/1.25 var(--fs-font-cjk);
+  color: rgba(255,255,255,.78);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-change-card {
+  display: grid;
+  gap: 14px;
+  flex: 1;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-change-row {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(164,194,255,.18);
+  background: rgba(8,22,42,.86);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-change-row.is-after {
+  border-color: rgba(60,127,255,.52);
+  background: linear-gradient(180deg, rgba(60,127,255,.18), rgba(60,127,255,.05));
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-tag {
+  align-self: flex-start;
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.08);
+  font: 800 24px/1 var(--fs-font-latin);
+  color: rgba(255,255,255,.76);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .is-after .i360-tag {
+  background: rgba(60,127,255,.34);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-change-row p {
+  margin: 0;
+  font: 500 24px/1.45 var(--fs-font-cjk);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-metrics div {
+  min-height: 104px;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid rgba(51,214,192,.28);
+  border-radius: 8px;
+  background: rgba(51,214,192,.07);
+  text-align: center;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-metrics strong {
+  font: 800 28px/1 var(--fs-font-cjk);
+  color: #62e3d1;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-metrics span {
+  font: 500 24px/1.2 var(--fs-font-cjk);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence {
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence-head h3 {
+  margin: 0;
+  font: 900 28px/1.2 var(--fs-font-cjk);
+  color: #fff;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence-head p {
+  margin: 10px 0 0;
+  font: 500 24px/1.3 var(--fs-font-cjk);
+  color: rgba(255,255,255,.78);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence-head > span {
+  flex: 0 0 auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #6eb4ff, #63e6d2);
+  font: 800 24px/1 var(--fs-font-cjk);
+  color: #06111f;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-screen-stack {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid rgba(164,194,255,.18);
+  border-radius: 8px;
+  background: rgba(2,7,19,.78);
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-original-visual {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/input/insta360-dealer-mail-ai.png');
+  background-repeat: no-repeat;
+  background-size: 1984px 1080px;
+  background-position: -732px -316px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.slide[data-slide-key="insta360-dealer-mail-ai"] .i360-benefits span {
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #5bb9f0, #63e6d2);
+  font: 800 24px/1 var(--fs-font-cjk);
+  color: #06111f;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="insta360-dealer-mail-ai"] .i360-summary, .slide-frame.is-current .slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence {
+    animation: i360-rise .58s cubic-bezier(.16,1,.3,1) both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="insta360-dealer-mail-ai"] .i360-evidence {
+    animation-delay: .08s;
+  }
+}
+
+@keyframes i360-rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+        

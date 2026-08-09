@@ -1,0 +1,73 @@
+
+.slide[data-slide-key="product-service-specialist"] .service-page { position:absolute; inset:0; overflow:hidden; color:#fff; background:radial-gradient(circle at 18% 12%,rgba(32,93,210,.25),transparent 31%),linear-gradient(135deg,#07152f 0%,#020b19 58%,#020711 100%); }
+.slide[data-slide-key="product-service-specialist"] .header { position:absolute; top:61px; left:73px; right:360px; }
+.slide[data-slide-key="product-service-specialist"] .header .title-zh { margin:0; font:700 48px/1.18 var(--fs-font-cjk); color:#fff; }
+.slide[data-slide-key="product-service-specialist"] .header .page-sub { margin:16px 0 0; font:500 24px/1.4 var(--fs-font-cjk); color:#fff; }
+.slide[data-slide-key="product-service-specialist"] .wordmark { display:block!important; position:absolute!important; top:61px!important; right:124px!important; left:auto!important; width:160px!important; height:50px!important; background:url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') left center/contain no-repeat!important; text-indent:-9999px!important; overflow:hidden!important; z-index:80!important; }
+.slide[data-slide-key="product-service-specialist"] .client-logo { position:absolute; top:61px; right:308px; width:198px; height:64px; box-sizing:border-box; padding:4px 10px; overflow:hidden; background:#fff; border:0; border-radius:8px; z-index:82; }
+.slide[data-slide-key="product-service-specialist"] .client-logo img { width:100%; height:100%; display:block; object-fit:contain; transform:scale(1.40); }
+.slide[data-slide-key="product-service-specialist"] .service-stage { position:absolute; left:72px; right:72px; top:252px; bottom:64px; display:grid; grid-template-columns:470px minmax(0,1fr); grid-template-rows:minmax(0,1fr); align-items:stretch; justify-content:stretch; gap:32px; }
+.slide[data-slide-key="product-service-specialist"] .profile-card, .slide[data-slide-key="product-service-specialist"] .service-panel { min-width:0; min-height:0; border:1px solid rgba(130,170,222,.25); border-radius:10px; background:rgba(20,34,57,.88); }
+.slide[data-slide-key="product-service-specialist"] .profile-card { padding:26px 28px; display:flex; flex-direction:column; }
+.slide[data-slide-key="product-service-specialist"] .employee-id { display:flex; align-items:center; gap:24px; }
+.slide[data-slide-key="product-service-specialist"] .employee-avatar { width:92px; height:92px; border-radius:50%; display:grid; place-items:center; color:#05111f; background:linear-gradient(135deg,#63e6d2,#58a7ff); font:800 48px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .employee-id h3 { margin:0; font:700 28px/1.25 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .employee-id p { margin:8px 0 0; color:#63e6d2; font:500 24px/1.3 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .service-meta { margin:24px 0 0; display:grid; gap:12px; }
+.slide[data-slide-key="product-service-specialist"] .service-meta div { display:grid; grid-template-columns:112px 1fr; gap:16px; }
+.slide[data-slide-key="product-service-specialist"] .service-meta dt { color:#9eabc2; font:600 24px/1.35 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .service-meta dd { margin:0; color:#fff; font:600 24px/1.35 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .divider { height:1px; margin:24px 0 18px; background:rgba(255,255,255,.16); }
+.slide[data-slide-key="product-service-specialist"] .profile-card h4 { margin:0; font:700 28px/1.2 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .profile-card ul { margin:16px 0 0; padding-left:26px; display:grid; gap:12px; }
+.slide[data-slide-key="product-service-specialist"] .profile-card li { font:500 24px/1.4 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .profile-card li::marker { color:#61ded0; }
+.slide[data-slide-key="product-service-specialist"] .kpis { margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.slide[data-slide-key="product-service-specialist"] .kpis article { min-height:92px; display:grid; place-items:center; align-content:center; border:1px solid rgba(78,154,255,.55); border-radius:8px; background:rgba(35,83,154,.2); }
+.slide[data-slide-key="product-service-specialist"] .kpis strong { color:#63e6d2; font:800 48px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .kpis span { margin-top:8px; font:600 16px/1.2 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .service-panel { padding:22px; display:grid; grid-template-rows:48px minmax(0,1fr) 52px; gap:14px; }
+.slide[data-slide-key="product-service-specialist"] .panel-heading { display:flex; align-items:center; justify-content:space-between; }
+.slide[data-slide-key="product-service-specialist"] .panel-heading strong { font:700 28px/1.2 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .panel-heading span { padding:8px 18px; border-radius:999px; color:#071526; background:linear-gradient(90deg,#58c8ff,#61ded0); font:700 16px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .visual-grid { min-height:0; display:grid; grid-template-columns:1.15fr .85fr; grid-template-rows:minmax(0,1fr); align-items:stretch; justify-content:stretch; gap:14px; }
+.slide[data-slide-key="product-service-specialist"] figure { position:relative; min-width:0; min-height:0; margin:0; overflow:hidden; border:1px solid rgba(145,179,225,.45); border-radius:8px; background:#fff; }
+.slide[data-slide-key="product-service-specialist"] figure img { width:100%; height:100%; display:block; object-fit:cover; object-position:center top; }
+.slide[data-slide-key="product-service-specialist"] .visual-main img { object-fit:contain; background:#f7f8fa; }
+.slide[data-slide-key="product-service-specialist"] figcaption { position:absolute; left:0; right:0; bottom:0; padding:13px 16px; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,.86)); font:700 24px/1.2 var(--fs-font-cjk); }
+.slide[data-slide-key="product-service-specialist"] .visual-side { min-height:0; display:grid; grid-template-rows:1fr 1fr; gap:14px; }
+.slide[data-slide-key="product-service-specialist"] .capability-tabs { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.slide[data-slide-key="product-service-specialist"] .capability-tabs span { display:grid; place-items:center; border-radius:7px; color:#071526; background:linear-gradient(90deg,#58c8ff,#61ded0); font:700 24px/1 var(--fs-font-cjk); }
+
+/* fs-logo-divider */
+.slide[data-slide-key="product-service-specialist"] .wordmark {
+  overflow: visible !important;
+}
+
+.slide[data-slide-key="product-service-specialist"] .wordmark::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 7px;
+  width: 2px;
+  height: 36px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .42);
+  pointer-events: none;
+}
+/* end fs-logo-divider */
+
+.slide[data-slide-key="product-service-specialist"] .service-page { bottom: auto; height: 1080px; }
+.slide[data-slide-key="product-service-specialist"] .header { right: 520px; }
+.slide[data-slide-key="product-service-specialist"] .bull-logo { transform: scale(1.15); }
+.slide[data-slide-key="product-service-specialist"] .kpis article { min-height: 110px; }
+.slide[data-slide-key="product-service-specialist"] .kpis span { font-size: 24px; }
+
+.slide[data-slide-key="product-service-specialist"] .client-logo { padding:0; background-image:url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/input/bull-logo.png'); background-repeat:no-repeat; background-position:center; background-size:214px 80px; }
+.slide[data-slide-key="product-service-specialist"] .client-logo img { display:none; }
+.slide[data-slide-key="product-service-specialist"] .panel-heading span { font-size: 24px; }
+
+
+
+
+        

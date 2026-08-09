@@ -1,0 +1,205 @@
+
+/* fs-unified-chrome-v2 */
+.slide[data-slide-key="xsd-digital-employee-sales"] .brand, .slide[data-slide-key="xsd-digital-employee-sales"] .brand-mark { display: none !important; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .wordmark {
+  display: block !important;
+  position: absolute !important;
+  top: 61px !important;
+  right: 124px !important;
+  left: auto !important;
+  width: 160px !important;
+  height: 50px !important;
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  z-index: 80 !important;
+}
+.slide[data-slide-key="xsd-digital-employee-sales"] > .header, .slide[data-slide-key="xsd-digital-employee-sales"] > .xsd-stage > .header {
+  display: block !important;
+  position: absolute !important;
+  top: 61px !important;
+  left: 73px !important;
+  right: 320px !important;
+  bottom: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  z-index: 70 !important;
+}
+.slide[data-slide-key="xsd-digital-employee-sales"] > .header .title-zh, .slide[data-slide-key="xsd-digital-employee-sales"] > .xsd-stage > .header .title-zh {
+  margin: 0 !important;
+  padding: 0 !important;
+  font: 600 48px/1.2 var(--fs-font-cjk) !important;
+  letter-spacing: 0 !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+.slide[data-slide-key="xsd-digital-employee-sales"] > .header .page-sub, .slide[data-slide-key="xsd-digital-employee-sales"] > .xsd-stage > .header .page-sub {
+  margin: 18px 0 0 0 !important;
+  padding: 0 !important;
+  max-width: 1320px !important;
+  font: 500 28px/1.35 var(--fs-font-cjk) !important;
+  color: #fff !important;
+}
+/* end fs-unified-chrome-v2 */
+
+/* fs-wordmark-standard-asset */
+.slide[data-slide-key="xsd-digital-employee-sales"] .wordmark {
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+/* end fs-wordmark-standard-asset */
+
+/* fs-turn-enter-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] .wordmark, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .header, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .cover-stage, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .cover-author, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .page-title, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .section-title {
+    animation: fs-turn-enter-xsd-digital-employee-sales .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > :not(style):not(script):not(.wordmark):not(.header):not(.cover-stage):not(.cover-author):not(.minutes-modal-layer):not(.modal-layer):not(.npi-modal-layer):not(.modal-window):not(.minutes-modal-toggle) {
+    animation: fs-turn-enter-xsd-digital-employee-sales .66s cubic-bezier(.16, 1, .3, 1) .10s both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .header .title-zh { animation-delay: .04s; }
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .header .page-sub { animation-delay: .12s; }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > * {
+    animation: fs-turn-enter-xsd-digital-employee-sales .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > *:nth-child(1) { animation-delay: .16s; }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > *:nth-child(2) { animation-delay: .24s; }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > *:nth-child(3) { animation-delay: .32s; }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > *:nth-child(4) { animation-delay: .40s; }
+
+  .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .stage > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .content > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .main > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > .body > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="stage"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="grid"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] > [class*="layout"] > *:nth-child(n+5) { animation-delay: .48s; }
+}
+
+@keyframes fs-turn-enter-xsd-digital-employee-sales {
+  from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+/* end fs-turn-enter-motion */
+
+.slide[data-slide-key="xsd-digital-employee-sales"] .client-logo {
+  width: 198px;
+  height: 64px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* fs-logo-divider */
+.slide[data-slide-key="xsd-digital-employee-sales"] .wordmark {
+  overflow: visible !important;
+}
+
+.slide[data-slide-key="xsd-digital-employee-sales"] .wordmark::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 7px;
+  width: 2px;
+  height: 36px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .42);
+  pointer-events: none;
+}
+/* end fs-logo-divider */
+/* migrated from raw inline <style> by F-272 codemod (2026-07-17) */
+.slide[data-slide-key="xsd-digital-employee-sales"] .brand, .slide[data-slide-key="xsd-digital-employee-sales"] .kicker, .slide[data-slide-key="xsd-digital-employee-sales"] .hero { display:none !important; }
+.slide[data-slide-key="xsd-digital-employee-sales"] {
+  color:#f8fbff;
+}
+.deck[data-mode="present"] .slide-frame:has(> .slide[data-slide-key="xsd-digital-employee-sales"]) {
+  background: radial-gradient(circle at 18% 22%,rgba(20,86,240,.25),transparent 32%), radial-gradient(circle at 84% 72%,rgba(60,127,255,.14),transparent 34%), linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px), linear-gradient(135deg,#020713,#071426 58%,#030810);
+  background-size:auto,auto,64px 64px,64px 64px,auto;
+}
+.deck[data-mode="scroll"] .slide[data-slide-key="xsd-digital-employee-sales"] {
+  background: radial-gradient(circle at 18% 22%,rgba(20,86,240,.25),transparent 32%), radial-gradient(circle at 84% 72%,rgba(60,127,255,.14),transparent 34%), linear-gradient(rgba(255,255,255,.014) 1px,transparent 1px), linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px), linear-gradient(135deg,#020713,#071426 58%,#030810);
+  background-size:auto,auto,64px 64px,64px 64px,auto;
+}
+.slide[data-slide-key="xsd-digital-employee-sales"] .xsd-stage { position:absolute; left:0; top:0; width:1920px; height:1080px; padding:0; font-family:var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .header { top:61px !important; left:73px !important; right:320px !important; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .header .title-zh { font:600 48px/1.2 var(--fs-font-cjk) !important; color:#fff; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .header .page-sub { margin-top:18px; max-width:1320px; font:500 28px/1.35 var(--fs-font-cjk); color:#fff; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .brand { position:absolute; top:58px; right:78px; display:flex; align-items:center; gap:12px; color:rgba(248,251,255,.86); font:800 24px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .brand-mark { width:36px; height:36px; border-radius:8px; background:linear-gradient(135deg,#3c7fff,#33d6c0); display:inline-block; clip-path:polygon(0 8%,42% 44%,78% 10%,100% 28%,58% 78%,18% 82%); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .client-logo { position:absolute; top:61px; right:308px; width:168px; height:50px; border-radius:8px; padding:6px 14px; object-fit:contain; background:#fff; border:1px solid rgba(255,255,255,.28); z-index:82; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .kicker { position:absolute; top:65px; left:78px; color:#63e6d2; font:800 24px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .kicker:before { content:""; display:inline-block; width:46px; height:3px; margin-right:16px; vertical-align:7px; background:linear-gradient(90deg,#3c7fff,#63e6d2); border-radius:8px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .hero { position:absolute; left:78px; top:104px; right:360px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .hero h1 { margin:0; min-height:78px; font:900 48px/1.24 var(--fs-font-cjk); letter-spacing:0; color:#fff; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .hero h1 b { color:#63e6d2; font-weight:900; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .hero p { margin:8px 0 0; max-width:1180px; color:rgba(222,233,255,.78); font:800 24px/1.38 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .content { position:absolute; left:73px; right:73px; top:252px; bottom:64px; display:grid; grid-template-columns:470px 1fr; gap:32px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .profile, .slide[data-slide-key="xsd-digital-employee-sales"] .visual { border:1px solid rgba(164,194,255,.18); border-radius:8px; background:linear-gradient(180deg,rgba(255,255,255,.075),rgba(255,255,255,.034)),rgba(4,13,27,.72); overflow:hidden; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .profile { padding:26px; display:flex; flex-direction:column; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .profile-top { display:flex; align-items:center; gap:24px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .avatar { flex:0 0 92px; width:92px; height:92px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,#63e6d2,#63a4ff); color:#03111f; font:900 48px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .profile h2 { margin:0; color:#fff; font:900 28px/1.22 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .profile .id { margin-top:10px; color:#63e6d2; font:900 24px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .facts { margin:22px 0 0; padding:0 0 20px; border-bottom:1px solid rgba(255,255,255,.13); display:grid; gap:14px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .facts div { color:#fff; font:850 24px/1.28 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .facts span { color:rgba(223,233,255,.72); margin-right:8px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .skill-title { margin:22px 0 14px; color:#fff; font:900 28px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .skill-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .skill-list li { display:grid; grid-template-columns:14px 1fr; gap:12px; color:rgba(233,240,255,.9); font:800 24px/1.34 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .skill-list li:before { content:""; width:8px; height:8px; margin-top:12px; border-radius:50%; background:#63e6d2; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .metric-row { margin-top:auto; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .metric { min-height:72px; border-radius:8px; background:linear-gradient(180deg,rgba(60,127,255,.22),rgba(60,127,255,.12)); border:1px solid rgba(93,151,255,.35); display:grid; place-items:center; text-align:center; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .metric strong { display:block; color:#63e6d2; font:900 28px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .metric span { display:block; margin-top:8px; color:#fff; font:800 24px/1.1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .visual { position:relative; padding:22px; display:flex; flex-direction:column; gap:14px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .visual-head { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .visual-title { margin:0; font:900 28px/1.25 var(--fs-font-cjk); color:#fff; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .visual-pill { flex:0 0 auto; padding:8px 16px; border-radius:8px; background:linear-gradient(90deg,#6eb4ff,#63e6d2); color:#06111f; font:900 24px/1 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .shot-wall { flex:1; min-height:0; display:grid; gap:14px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .shot-card { min-width:0; min-height:0; margin:0; border-radius:8px; overflow:hidden; background:#f6f8fc; border:1px solid rgba(255,255,255,.22); box-shadow:0 18px 34px rgba(0,0,0,.26); position:relative; display:flex; flex-direction:column; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .shot-card img { width:100%; height:100%; min-height:0; object-fit:cover; display:block; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .shot-card.contain img { object-fit:contain; background:#f7f9fd; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .shot-card figcaption { position:absolute; left:0; right:0; bottom:0; padding:10px 14px; background:linear-gradient(180deg,transparent,rgba(3,10,22,.86)); color:#fff; font:800 24px/1.15 var(--fs-font-cjk); }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-sales { grid-template-columns:1fr 1fr 280px; grid-template-rows:1fr 1fr; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-sales .a { grid-row:1 / 3; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-sales .b { grid-row:1 / 3; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-sales .phone img { object-fit:contain; padding:10px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-two { grid-template-rows:1fr 1fr; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-three { grid-template-columns:1fr 1fr; grid-template-rows:1.15fr .85fr; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-three .wide { grid-column:1 / 3; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-service { grid-template-columns:1.2fr .8fr; grid-template-rows:1fr 152px 92px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-service .main { grid-row:1 / 4; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-service .wide { grid-column:2; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .grid-service .banner img { object-fit:contain; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .chips { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.slide[data-slide-key="xsd-digital-employee-sales"] .chips span { min-height:52px; border-radius:8px; display:grid; place-items:center; color:#06111f; background:linear-gradient(90deg,rgba(99,214,255,.96),#63e6d2); font:900 24px/1 var(--fs-font-cjk); }
+@media (prefers-reduced-motion:no-preference){ .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] .profile, .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] .visual { animation:xsd-product-rise .58s cubic-bezier(.16,1,.3,1) both; } .slide-frame.is-current .slide[data-slide-key="xsd-digital-employee-sales"] .visual { animation-delay:.08s; } }
+@keyframes xsd-product-rise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
+
+/* 2026-08-06 — enlarge Haida logo while preserving the header alignment. */
+.slide[data-slide-key="xsd-digital-employee-sales"] .client-logo {
+  width: 198px;
+  height: 64px;
+  padding: 2px 6px;
+  object-fit: cover;
+}
+
+
+        

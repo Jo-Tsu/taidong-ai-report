@@ -1,0 +1,360 @@
+
+.deck[data-mode="present"] .slide-frame:has(> .slide[data-slide-key="base-engineering-mindset"]) {
+  background: #050A17 url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-content-bg.jpg') center/cover no-repeat;
+}
+.deck[data-mode="scroll"] .slide[data-slide-key="base-engineering-mindset"] {
+  background: #050A17 url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-content-bg.jpg') center/cover no-repeat;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .wordmark {
+  display: block;
+  position: absolute;
+  top: 61px;
+  right: 124px;
+  width: 160px;
+  height: 50px;
+  background: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') left center/contain no-repeat;
+  z-index: 80;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] > .header {
+  right: 320px;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] > .header .page-sub {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 18px;
+  color: #C8D2E8;
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] > .header .page-sub strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-observation-tag {
+  flex: 0 0 auto;
+  padding: 7px 14px;
+  border: 1px solid rgba(60, 127, 255, .52);
+  border-radius: 999px;
+  background: rgba(60, 127, 255, .14);
+  color: #8FB3FF;
+  font: 700 24px/1 var(--fs-font-cjk);
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-canvas {
+  position: absolute;
+  top: 258px;
+  right: 72px;
+  left: 72px;
+  height: 768px;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-links {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-link {
+  fill: none;
+  stroke: url(#bemLineBlue);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-link--spine {
+  stroke-dasharray: 7 10;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-link--merge {
+  stroke-opacity: .72;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-link--out {
+  stroke: url(#bemLineGreen);
+  stroke-width: 6;
+  filter: url(#bemGlow);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-arrow {
+  fill: #2DD4BF;
+  filter: url(#bemGlow);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-pulse {
+  fill: #BFD2FF;
+  stroke: rgba(60, 127, 255, .42);
+  stroke-width: 8;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-pulse--three {
+  fill: #75E8D9;
+  stroke: rgba(45, 212, 191, .34);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-node, .slide[data-slide-key="base-engineering-mindset"] .bem-mindset-node, .slide[data-slide-key="base-engineering-mindset"] .bem-output-node {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 24px;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-node {
+  top: 80px;
+  left: 0;
+  width: 330px;
+  height: 412px;
+  padding: 38px 34px 30px;
+  border: 1px solid rgba(60, 127, 255, .54);
+  background: linear-gradient(145deg, rgba(60, 127, 255, .22), rgba(18, 28, 52, .88) 58%, rgba(123, 97, 255, .12));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-icon {
+  display: grid;
+  grid-template-columns: repeat(3, 20px);
+  gap: 6px;
+  width: max-content;
+  margin-bottom: 22px;
+  padding: 13px;
+  border: 1px solid rgba(143, 179, 255, .42);
+  border-radius: 16px;
+  background: rgba(6, 12, 26, .66);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-icon i {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: rgba(143, 179, 255, .26);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-icon i:nth-child(2), .slide[data-slide-key="base-engineering-mindset"] .bem-base-icon i:nth-child(6), .slide[data-slide-key="base-engineering-mindset"] .bem-base-icon i:nth-child(8) {
+  background: #4E88FF;
+  box-shadow: none;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-kicker, .slide[data-slide-key="base-engineering-mindset"] .bem-zone-label, .slide[data-slide-key="base-engineering-mindset"] .bem-output-tag {
+  color: #8FB3FF;
+  font: 700 24px/1.2 var(--fs-font-cjk);
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-node h3 {
+  margin: 10px 0 14px;
+  color: #FFFFFF;
+  font: 700 28px/1.2 var(--fs-font-cjk);
+  letter-spacing: -.02em;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-node p {
+  margin: 0;
+  color: #C5D0E6;
+  font: 500 24px/1.5 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-proof {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(143, 179, 255, .18);
+  color: #8490A8;
+  font: 600 24px/1.2 var(--fs-font-cjk);
+  text-align: center;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-base-proof b {
+  color: #9EBBFF;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-capability-zone {
+  position: absolute;
+  top: 0;
+  left: 410px;
+  width: 610px;
+  height: 550px;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-zone-label {
+  display: block;
+  height: 24px;
+  color: #7F8BA4;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-capability {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px 210px 1fr;
+  align-items: center;
+  height: 84px;
+  margin-top: 18px;
+  padding: 0 24px 0 18px;
+  box-sizing: border-box;
+  border: 1px solid rgba(143, 179, 255, .22);
+  border-radius: 18px;
+  background: linear-gradient(90deg, rgba(18, 31, 59, .92), rgba(12, 20, 39, .78));
+  box-shadow: inset 3px 0 0 rgba(60, 127, 255, .72);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-capability-no {
+  color: #568BFF;
+  font: 700 24px/1 var(--fs-font-latin);
+  letter-spacing: .1em;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-capability strong {
+  color: #F4F7FF;
+  font: 600 28px/1.2 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-capability p {
+  margin: 0;
+  color: #AEB9CE;
+  font: 500 24px/1.2 var(--fs-font-cjk);
+  text-align: right;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-node {
+  top: 85px;
+  left: 1090px;
+  width: 290px;
+  height: 400px;
+  padding: 34px 28px;
+  border: 1px solid rgba(123, 97, 255, .64);
+  background: radial-gradient(circle at 50% 16%, rgba(123, 97, 255, .26), transparent 42%), linear-gradient(155deg, rgba(23, 29, 60, .96), rgba(12, 18, 39, .92));
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-mark {
+  position: relative;
+  width: 92px;
+  height: 72px;
+  margin: 30px auto 18px;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-mark i {
+  position: absolute;
+  top: 16px;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #9B8BFF;
+  border-radius: 50%;
+  background: rgba(123, 97, 255, .15);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-mark i:nth-child(1) { left: 0; }
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-mark i:nth-child(2) { right: 0; }
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-mark i:nth-child(3) {
+  top: 0;
+  left: 21px;
+  border-color: #6FA3FF;
+  background: rgba(60, 127, 255, .18);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-node h3 {
+  margin: 0 0 16px;
+  color: #FFFFFF;
+  font: 700 48px/1.08 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-mindset-node p {
+  margin: 0;
+  color: #B8C2D8;
+  font: 500 24px/1.5 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-output-node {
+  top: 85px;
+  left: 1468px;
+  width: 308px;
+  height: 400px;
+  padding: 34px 26px;
+  border: 1px solid rgba(45, 212, 191, .55);
+  background: radial-gradient(circle at 50% 20%, rgba(45, 212, 191, .2), transparent 46%), linear-gradient(155deg, rgba(12, 38, 45, .94), rgba(8, 25, 35, .94));
+  text-align: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-output-tag {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid rgba(45, 212, 191, .34);
+  border-radius: 999px;
+  background: rgba(45, 212, 191, .08);
+  color: #75E8D9;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-output-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 24px auto 18px;
+  border-radius: 18px;
+  background: #2DD4BF;
+  color: #06221F;
+  font: 700 28px/1 var(--fs-font-latin);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-output-node h3 {
+  margin: 0 0 14px;
+  color: #F5FFFD;
+  font: 700 28px/1.35 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-output-node p {
+  margin: 0;
+  color: #AFCAC6;
+  font: 500 24px/1.45 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-bottom-claim {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 410px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  height: 94px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, .09);
+  border-radius: 20px;
+  background: rgba(10, 17, 33, .82);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-bottom-claim > span {
+  flex: 0 0 auto;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(60, 127, 255, .14);
+  color: #8FB3FF;
+  font: 700 24px/1 var(--fs-font-cjk);
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-bottom-claim p {
+  margin: 0;
+  color: #B8C2D8;
+  font: 500 24px/1.4 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="base-engineering-mindset"] .bem-bottom-claim strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+        

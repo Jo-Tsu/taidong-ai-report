@@ -1,0 +1,252 @@
+
+.deck[data-mode="present"] .slide-frame:has(> .slide[data-slide-key="shengnong-tianqi-case"]) {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(60, 127, 255, .22), transparent 32%),
+    radial-gradient(circle at 16% 78%, rgba(51, 214, 192, .16), transparent 30%),
+    linear-gradient(135deg, #071120 0%, #0a1528 52%, #050914 100%) !important;
+}
+.deck[data-mode="scroll"] .slide[data-slide-key="shengnong-tianqi-case"] {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(60, 127, 255, .22), transparent 32%),
+    radial-gradient(circle at 16% 78%, rgba(51, 214, 192, .16), transparent 30%),
+    linear-gradient(135deg, #071120 0%, #0a1528 52%, #050914 100%) !important;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-page {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  color: #fff;
+  font-family: var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(60, 127, 255, .12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, .035), transparent 30%);
+  pointer-events: none;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-header {
+  position: absolute;
+  top: 61px;
+  left: 96px;
+  right: 300px;
+  z-index: 2;
+  margin: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-header .title-zh {
+  margin: 0;
+  font: 800 48px/1.16 var(--fs-font-cjk);
+  color: #fff;
+  letter-spacing: 0;
+  overflow: visible !important;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-header .page-sub {
+  margin: 16px 0 0;
+  max-width: 1180px;
+  font: 500 24px/1.36 var(--fs-font-cjk);
+  color: rgba(232, 240, 255, .72);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-stage {
+  position: absolute;
+  left: 96px;
+  right: 96px;
+  top: 214px;
+  bottom: 72px;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+  grid-template-rows: minmax(0, 1fr) 142px;
+  gap: 24px;
+  min-width: 0;
+  min-height: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-left, .slide[data-slide-key="shengnong-tianqi-case"] .sn-evidence, .slide[data-slide-key="shengnong-tianqi-case"] .sn-value {
+  min-width: 0;
+  min-height: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-left {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px 30px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .055);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-eyebrow {
+  width: fit-content;
+  margin: 0;
+  padding: 8px 16px;
+  border: 1px solid rgba(60, 127, 255, .42);
+  border-radius: 999px;
+  background: rgba(60, 127, 255, .12);
+  color: rgba(248, 251, 255, .92);
+  font: 600 24px/1.35 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-quote {
+  margin: 0;
+  font: 800 48px/1.12 var(--fs-font-cjk);
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-flow {
+  display: grid;
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  min-height: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step-tag {
+  font: 800 28px/1.2 var(--fs-font-cjk);
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step p {
+  margin: 0;
+  font: 500 24px/1.42 var(--fs-font-cjk);
+  color: rgba(248, 251, 255, .88);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step.is-blue .sn-step-tag { color: #6FA3FF; }
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step.is-teal .sn-step-tag { color: #33D6C0; }
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-step.is-violet .sn-step-tag { color: #B891F5; }
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-evidence {
+  position: relative;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .055);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08);
+  overflow: hidden;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-shot-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(51, 214, 192, .35);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .96);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-shot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-shot-cap {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 10px 16px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 8px;
+  background: rgba(5, 13, 24, .82);
+  color: rgba(248, 251, 255, .92);
+  font: 600 24px/1.28 var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-value {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 22px 28px;
+  border: 1px solid rgba(255, 255, 255, .13);
+  border-left-width: 4px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .052);
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi.is-blue { border-left-color: #6FA3FF; }
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi.is-teal { border-left-color: #33D6C0; }
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi.is-violet { border-left-color: #B891F5; }
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi-value {
+  font: 800 48px/1.06 var(--fs-font-cjk);
+  color: #fff;
+  letter-spacing: 0;
+}
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi.is-teal .sn-kpi-value { color: #33D6C0; }
+
+.slide[data-slide-key="shengnong-tianqi-case"] .sn-kpi-label {
+  font: 500 24px/1.25 var(--fs-font-cjk);
+  color: rgba(232, 240, 255, .72);
+}
+
+/* fs-turn-enter-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] .wordmark, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .header, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .cover-stage, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .cover-author, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .page-title, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .section-title {
+    animation: fs-turn-enter-shengnong-tianqi-case .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > :not(style):not(script):not(.wordmark):not(.header):not(.cover-stage):not(.cover-author):not(.minutes-modal-layer):not(.modal-layer):not(.npi-modal-layer):not(.modal-window):not(.minutes-modal-toggle) {
+    animation: fs-turn-enter-shengnong-tianqi-case .66s cubic-bezier(.16, 1, .3, 1) .10s both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .header .title-zh { animation-delay: .04s; }
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .header .page-sub { animation-delay: .12s; }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *, .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > * {
+    animation: fs-turn-enter-shengnong-tianqi-case .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > *:nth-child(1) { animation-delay: .16s; }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > *:nth-child(2) { animation-delay: .24s; }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > *:nth-child(3) { animation-delay: .32s; }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > *:nth-child(4) { animation-delay: .40s; }
+
+  .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .stage > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .content > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .main > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > .body > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="stage"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="grid"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="shengnong-tianqi-case"] > [class*="layout"] > *:nth-child(n+5) { animation-delay: .48s; }
+}
+
+@keyframes fs-turn-enter-shengnong-tianqi-case {
+  from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+/* end fs-turn-enter-motion */
+
+        

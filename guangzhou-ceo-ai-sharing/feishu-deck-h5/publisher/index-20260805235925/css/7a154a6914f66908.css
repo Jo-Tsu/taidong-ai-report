@@ -1,0 +1,848 @@
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-canvas, .slide[data-slide-key="office-software-role-shift"] .role-shift-canvas * {
+  box-sizing: border-box;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-canvas {
+  position: absolute;
+  top: 224px;
+  right: 72px;
+  left: 72px;
+  height: 802px;
+  color: #F7F9FF;
+  font-family: var(--fs-font-cjk);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-panel {
+  position: absolute;
+  top: 66px;
+  height: 620px;
+  border: 1px solid rgba(143, 154, 179, .28);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-past {
+  left: 0;
+  width: 610px;
+  border-color: rgba(143, 154, 179, .28);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-future {
+  right: 0;
+  width: 742px;
+  border-color: rgba(60, 127, 255, .46);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-era {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #8F9AB3;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-era__index {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(143, 154, 179, .5);
+  border-radius: 50%;
+  color: #CBD3E6;
+  letter-spacing: normal;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-era--future {
+  color: #AFC7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-era--future .role-shift-era__index {
+  border-color: rgba(60, 127, 255, .68);
+  color: #DCE7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-panel h3 {
+  position: absolute;
+  top: 76px;
+  right: 28px;
+  left: 28px;
+  height: 40px;
+  margin: 0;
+  color: #F7F9FF;
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: -.01em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-panel h3 span {
+  color: #8F9AB3;
+  font-weight: 500;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-future h3 span {
+  color: #AFC7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-past-map {
+  position: absolute;
+  top: 138px;
+  left: 24px;
+  width: 560px;
+  height: 376px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-future-map {
+  position: absolute;
+  top: 132px;
+  left: 28px;
+  width: 686px;
+  height: 390px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-past-flow, .slide[data-slide-key="office-software-role-shift"] .role-shift-future-flow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line, .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-pulse {
+  fill: none;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line {
+  stroke: #536079;
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-flow-pulse {
+  opacity: 0;
+  stroke: #D7DFEF;
+  stroke-width: 5;
+  stroke-dasharray: .08 .92;
+  stroke-dashoffset: 0;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-future .role-shift-flow-line {
+  stroke: #4776DC;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-future .role-shift-flow-pulse {
+  stroke: #BBD0FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-node {
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 186px;
+  height: 64px;
+  padding: 0 12px;
+  border: 1px solid rgba(203, 211, 230, .48);
+  border-radius: 16px;
+  background: #111B31;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-node--past {
+  left: 187px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-node--future {
+  left: 250px;
+  border-color: rgba(126, 166, 255, .7);
+  background: linear-gradient(135deg, #142951, #1D2758);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 0;
+  text-align: center;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-copy strong {
+  color: #F7F9FF;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-copy small {
+  margin-top: 7px;
+  color: #8F9AB3;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-user-node--future .role-shift-user-copy small {
+  color: #AFC7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-direct-label, .slide[data-slide-key="office-software-role-shift"] .role-shift-capability-label {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(143, 154, 179, .28);
+  border-radius: 999px;
+  background: #080F21;
+  color: #8F9AB3;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .06em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-direct-label {
+  top: 114px;
+  left: 180px;
+  width: 200px;
+  height: 40px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool {
+  position: absolute;
+  top: 260px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 128px;
+  height: 68px;
+  border: 1px solid rgba(143, 154, 179, .38);
+  border-radius: 16px;
+  background: rgba(12, 21, 43, .9);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool--chat {
+  left: 0;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool--docs {
+  left: 144px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool--meeting {
+  left: 288px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool--approval {
+  left: 432px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-tool-no {
+  color: #7F8AA2;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool strong {
+  color: #DCE2F0;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-intent {
+  position: absolute;
+  top: 102px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 48px;
+  border: 1px solid rgba(60, 127, 255, .54);
+  border-radius: 16px;
+  background: #122144;
+  color: #E7EEFF;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-intent--finance {
+  left: 0;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-intent--meeting {
+  left: 240px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-intent--market {
+  left: 480px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-core {
+  position: absolute;
+  top: 180px;
+  left: 223px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 240px;
+  height: 104px;
+  border: 2px solid #8FB3FF;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #254FAD, #5137A2);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-core strong {
+  position: relative;
+  z-index: 2;
+  color: #FFFFFF;
+  font-family: var(--fs-font-latin);
+  font-size: var(--fs-sub);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.01em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-core > span:last-child {
+  position: relative;
+  z-index: 2;
+  margin-top: 12px;
+  color: #DCE7FF;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid rgba(126, 166, 255, .46);
+  border-radius: 38px;
+  transform: translate(-50%, -50%);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-ring--outer {
+  width: 278px;
+  height: 136px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-ai-ring--inner {
+  width: 260px;
+  height: 122px;
+  border-color: rgba(157, 127, 255, .58);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability-label {
+  top: 290px;
+  left: 243px;
+  width: 200px;
+  height: 34px;
+  border-color: rgba(60, 127, 255, .3);
+  color: #AFC7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability {
+  position: absolute;
+  top: 328px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 58px;
+  border: 1px solid rgba(60, 127, 255, .54);
+  border-radius: 16px;
+  background: #101E3A;
+  color: #F2F5FF;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability--docs {
+  left: 0;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability--sheet {
+  left: 137px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability--meeting {
+  left: 274px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability--chat {
+  left: 411px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-capability--flow {
+  left: 548px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-caption {
+  position: absolute;
+  right: 28px;
+  bottom: 24px;
+  left: 28px;
+  margin: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(143, 154, 179, .22);
+  color: #AEB8CD;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-caption--future {
+  color: #C8D7F8;
+  border-top-color: rgba(60, 127, 255, .24);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-pivot {
+  position: absolute;
+  top: 122px;
+  left: 632px;
+  width: 382px;
+  height: 520px;
+  border-right: 1px solid rgba(60, 127, 255, .18);
+  border-left: 1px solid rgba(143, 154, 179, .18);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-pivot__kicker {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  color: #AEB8CD;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-transfer {
+  position: absolute;
+  top: 48px;
+  right: 26px;
+  left: 26px;
+  display: grid;
+  grid-template-columns: 56px 1fr 126px;
+  align-items: center;
+  gap: 10px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__from, .slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__to {
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -.03em;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__from {
+  color: #8F9AB3;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__to {
+  color: #8FB3FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-migration-arrow {
+  position: relative;
+  height: 56px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-migration-beam {
+  position: absolute;
+  top: 26px;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #68748D 0%, var(--fs-blue) 56%, var(--fs-violet) 100%);
+  transform-origin: left center;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-signal-dot {
+  position: absolute;
+  top: 19px;
+  left: 0;
+  width: 18px;
+  height: 18px;
+  border: 4px solid #DCE7FF;
+  border-radius: 50%;
+  background: var(--fs-blue);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-chevron {
+  position: absolute;
+  top: 19px;
+  width: 16px;
+  height: 16px;
+  border-top: 3px solid #BBD0FF;
+  border-right: 3px solid #BBD0FF;
+  transform: rotate(45deg);
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--1 {
+  right: 50px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--2 {
+  right: 30px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--3 {
+  right: 10px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-pivot__label {
+  position: absolute;
+  top: 132px;
+  right: 0;
+  left: 0;
+  color: #7F8AA2;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-pivot__statement {
+  position: absolute;
+  top: 168px;
+  right: 20px;
+  left: 20px;
+  margin: 0;
+  color: #F7F9FF;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-pivot__statement span {
+  color: #AFC7FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode-pair {
+  position: absolute;
+  top: 294px;
+  right: 20px;
+  left: 20px;
+  display: grid;
+  grid-template-columns: 1fr 30px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 104px;
+  padding: 16px 10px;
+  border: 1px solid rgba(143, 154, 179, .26);
+  border-radius: 16px;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode--new {
+  border-color: rgba(60, 127, 255, .56);
+  background: linear-gradient(135deg, rgba(60, 127, 255, .18), rgba(123, 97, 255, .08));
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode span {
+  color: #7F8AA2;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .08em;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode strong {
+  margin-top: 12px;
+  color: #CBD3E6;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode--new strong {
+  color: #F7F9FF;
+}
+
+.slide[data-slide-key="office-software-role-shift"] .role-shift-mode-arrow {
+  color: #7EA6FF;
+  font-size: var(--fs-sub);
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-user-node--past.reveal {
+    animation: aiors-user-in .56s var(--fs-ease-out) .15s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-direct-label.reveal {
+    animation: aiors-rise-in .48s var(--fs-ease-out) .42s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-past-flow .role-shift-flow-line {
+    animation: aiors-line-draw .7s var(--fs-ease-out) both;
+    animation-delay: calc(.46s + var(--i, 0) * 60ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-past-flow .role-shift-flow-pulse {
+    animation: aiors-route-pulse 1.9s linear both infinite;
+    animation-delay: calc(.78s + var(--i, 0) * 130ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-old-tool.reveal {
+    animation: aiors-node-catch .56s var(--fs-ease-out) both;
+    animation-delay: calc(.82s + var(--i, 0) * 110ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-past .role-shift-caption.reveal {
+    animation: aiors-rise-in .52s var(--fs-ease-out) 1.28s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-migration-beam {
+    animation: aiors-beam-grow .72s var(--fs-ease-out) 1.28s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__from {
+    animation: aiors-human-demote .66s var(--fs-ease-out) 1.38s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__to {
+    animation: aiors-ai-takeover .7s var(--fs-ease-out) 1.5s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-signal-dot {
+    animation: aiors-signal-travel 1.75s linear 1.42s infinite;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-chevron {
+    animation: aiors-chevron-pulse 1.35s var(--fs-ease-soft) infinite both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--1 {
+    animation-delay: 1.46s;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--2 {
+    animation-delay: 1.61s;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-chevron--3 {
+    animation-delay: 1.76s;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-mode--old.reveal {
+    animation: aiors-rise-in .5s var(--fs-ease-out) 1.44s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-mode--new.reveal {
+    animation: aiors-rise-in .58s var(--fs-ease-out) 1.78s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-user-node--future.reveal {
+    animation: aiors-user-in .58s var(--fs-ease-out) 1.72s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line--command {
+    animation: aiors-line-draw .5s var(--fs-ease-out) both;
+    animation-delay: calc(1.96s + var(--i, 0) * 60ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-pulse--command {
+    animation:
+      aiors-route-pulse 1.55s linear both infinite,
+      aiors-route-pulse-gate 1ms linear both;
+    animation-delay:
+      calc(2.08s + var(--i, 0) * 120ms),
+      calc(2.08s + var(--i, 0) * 120ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-intent.reveal {
+    animation: aiors-node-catch .52s var(--fs-ease-out) both;
+    animation-delay: calc(2.12s + var(--i, 0) * 100ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line--agent {
+    animation: aiors-line-draw .54s var(--fs-ease-out) both;
+    animation-delay: calc(2.42s + var(--i, 0) * 60ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-pulse--agent {
+    animation:
+      aiors-route-pulse 1.45s linear both infinite,
+      aiors-route-pulse-gate 1ms linear both;
+    animation-delay:
+      calc(2.55s + var(--i, 0) * 110ms),
+      calc(2.55s + var(--i, 0) * 110ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-ai-core.reveal {
+    animation: aiors-core-on .72s var(--fs-ease-out) 2.62s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-ai-ring--outer {
+    animation: aiors-ring-breathe 4.8s ease-in-out 3.15s infinite;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-ai-ring--inner {
+    animation: aiors-ring-breathe 4.8s ease-in-out 3.55s infinite reverse;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-capability-label.reveal {
+    animation: aiors-rise-in .46s var(--fs-ease-out) 2.88s both;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line--capability {
+    animation: aiors-line-draw .58s var(--fs-ease-out) both;
+    animation-delay: calc(2.92s + var(--i, 0) * 55ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-pulse--capability {
+    animation:
+      aiors-route-pulse 1.7s linear both infinite,
+      aiors-route-pulse-gate 1ms linear both;
+    animation-delay:
+      calc(3.06s + var(--i, 0) * 90ms),
+      calc(3.06s + var(--i, 0) * 90ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-capability.reveal {
+    animation: aiors-node-catch .54s var(--fs-ease-out) both;
+    animation-delay: calc(3.15s + var(--i, 0) * 80ms);
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-future .role-shift-caption.reveal {
+    animation: aiors-rise-in .54s var(--fs-ease-out) 3.68s both;
+  }
+}
+
+@keyframes aiors-user-in {
+  from { opacity: 0; transform: translateY(-12px) scale(.96); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes aiors-line-draw {
+  from { opacity: .18; stroke-dashoffset: 1; }
+  to { opacity: 1; stroke-dashoffset: 0; }
+}
+
+@keyframes aiors-route-pulse {
+  0% { opacity: 0; stroke-dashoffset: 0; }
+  12% { opacity: 1; }
+  84% { opacity: 1; }
+  100% { opacity: 0; stroke-dashoffset: -.92; }
+}
+
+@keyframes aiors-route-pulse-gate {
+  from { stroke-width: 0; }
+  to { stroke-width: 5; }
+}
+
+@keyframes aiors-node-catch {
+  from { opacity: 0; transform: translateY(-10px) scale(.95); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes aiors-rise-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes aiors-beam-grow {
+  from { opacity: .3; transform: scaleX(0); }
+  to { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes aiors-human-demote {
+  from { color: #F7F9FF; transform: translateX(12px); }
+  to { color: #8F9AB3; transform: none; }
+}
+
+@keyframes aiors-ai-takeover {
+  from { opacity: 0; transform: scale(.72); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes aiors-signal-travel {
+  0% { left: 0; opacity: 0; }
+  12% { opacity: 1; }
+  82% { opacity: 1; }
+  100% { left: calc(100% - 18px); opacity: 0; }
+}
+
+@keyframes aiors-chevron-pulse {
+  0%, 66%, 100% { opacity: .34; transform: rotate(45deg) scale(.86); }
+  30% { opacity: 1; transform: rotate(45deg) scale(1.08); }
+}
+
+@keyframes aiors-core-on {
+  from { opacity: 0; transform: scale(.78); filter: blur(10px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes aiors-ring-breathe {
+  0%, 100% { opacity: .32; transform: translate(-50%, -50%) scale(.97); }
+  50% { opacity: .8; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+/* p17-instant-visibility: keep the diagram readable immediately on slide entry */
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .reveal {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-flow-line {
+    animation: none !important;
+    opacity: 1 !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-migration-beam, .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__from, .slide-frame.is-current .slide[data-slide-key="office-software-role-shift"] .role-shift-transfer__to {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+/* end p17-instant-visibility */
+
+
+        

@@ -1,0 +1,151 @@
+
+/* fs-unified-chrome-v2 */
+.slide[data-slide-key="enterprise-digital-employees"] .brand, .slide[data-slide-key="enterprise-digital-employees"] .brand-mark { display: none !important; }
+.slide[data-slide-key="enterprise-digital-employees"] .wordmark {
+  display: block !important;
+  position: absolute !important;
+  top: 61px !important;
+  right: 124px !important;
+  left: auto !important;
+  width: 160px !important;
+  height: 50px !important;
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
+  z-index: 80 !important;
+}
+.slide[data-slide-key="enterprise-digital-employees"] > .header, .slide[data-slide-key="enterprise-digital-employees"] > .xsd-stage > .header {
+  display: block !important;
+  position: absolute !important;
+  top: 61px !important;
+  left: 73px !important;
+  right: 320px !important;
+  bottom: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  z-index: 70 !important;
+}
+.slide[data-slide-key="enterprise-digital-employees"] > .header .title-zh, .slide[data-slide-key="enterprise-digital-employees"] > .xsd-stage > .header .title-zh {
+  margin: 0 !important;
+  padding: 0 !important;
+  font: 600 48px/1.2 var(--fs-font-cjk) !important;
+  letter-spacing: 0 !important;
+  color: #fff !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  max-width: 100% !important;
+}
+.slide[data-slide-key="enterprise-digital-employees"] > .header .page-sub, .slide[data-slide-key="enterprise-digital-employees"] > .xsd-stage > .header .page-sub {
+  margin: 18px 0 0 0 !important;
+  padding: 0 !important;
+  max-width: 1320px !important;
+  font: 500 28px/1.35 var(--fs-font-cjk) !important;
+  color: #fff !important;
+}
+/* end fs-unified-chrome-v2 */
+
+/* fs-wordmark-standard-asset */
+.slide[data-slide-key="enterprise-digital-employees"] .wordmark {
+  background-image: url('https://magic-builder.tos-cn-beijing.volces.com/feishu-deck-h5/publisher/index-20260805235925/assets/lark-logo.png') !important;
+  background-position: left center !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+/* end fs-wordmark-standard-asset */
+
+/* fs-turn-enter-motion */
+@media (prefers-reduced-motion: no-preference) {
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] .wordmark, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .header, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .cover-stage, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .cover-author, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .page-title, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .section-title {
+    animation: fs-turn-enter-enterprise-digital-employees .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > :not(style):not(script):not(.wordmark):not(.header):not(.cover-stage):not(.cover-author):not(.minutes-modal-layer):not(.modal-layer):not(.npi-modal-layer):not(.modal-window):not(.minutes-modal-toggle) {
+    animation: fs-turn-enter-enterprise-digital-employees .66s cubic-bezier(.16, 1, .3, 1) .10s both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .header .title-zh { animation-delay: .04s; }
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .header .page-sub { animation-delay: .12s; }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *, .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > * {
+    animation: fs-turn-enter-enterprise-digital-employees .62s cubic-bezier(.16, 1, .3, 1) both;
+    will-change: opacity, transform, filter;
+  }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *:nth-child(1), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > *:nth-child(1) { animation-delay: .16s; }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *:nth-child(2), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > *:nth-child(2) { animation-delay: .24s; }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *:nth-child(3), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > *:nth-child(3) { animation-delay: .32s; }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *:nth-child(4), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > *:nth-child(4) { animation-delay: .40s; }
+
+  .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .stage > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .content > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .main > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > .body > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="stage"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="grid"] > *:nth-child(n+5), .slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] > [class*="layout"] > *:nth-child(n+5) { animation-delay: .48s; }
+}
+
+@keyframes fs-turn-enter-enterprise-digital-employees {
+  from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+/* end fs-turn-enter-motion */
+
+/* migrated from raw inline <style> by F-272 codemod (2026-07-17) */
+@keyframes edw-fade{from{opacity:0}to{opacity:1}}
+@keyframes edw-rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] .hero h2 {animation:edw-fade .5s .04s both ease-out}
+.slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] .edw-stage>* {animation:edw-rise .55s .18s both cubic-bezier(.22,.61,.36,1)}
+.slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] .edw-stage>*:nth-child(1) {animation-delay:.12s}
+.slide-frame.is-current .slide[data-slide-key="enterprise-digital-employees"] .edw-stage>*:nth-child(2) {animation-delay:.26s}
+.slide[data-slide-key="enterprise-digital-employees"] .header { display: none; }
+.slide[data-slide-key="enterprise-digital-employees"] .edw-stage {
+  position: absolute; inset: 0;
+  display: flex !important; flex-direction: column;
+  justify-content: center; align-items: center;
+  gap: 56px; padding: 96px;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .hero {
+  text-align: center; max-width: 1580px;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .hero h2 {
+  font: 900 80px/1.15 var(--fs-font-cjk); /* allow:typescale */
+  color: #fff; letter-spacing: 0; margin: 0;
+  padding: 14px 0;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .hero .accent {
+  color: var(--fs-teal);
+}
+.slide[data-slide-key="enterprise-digital-employees"] .example-row {
+  display: flex; gap: 24px; align-items: stretch; justify-content: center;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip {
+  min-width: 320px;
+  padding: 22px 32px;
+  background: rgba(8,12,24,0.55);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 14px;
+  display: flex; flex-direction: column;
+  gap: 8px; text-align: center;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip .word {
+  font: 900 48px/1.1 var(--fs-font-cjk);
+}
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip .desc {
+  font: 500 24px/1.4 var(--fs-font-cjk);
+  color: #fff;
+}
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-blue { border-color: rgba(60,127,255,0.50); }
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-teal { border-color: rgba(51,214,192,0.50); }
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-violet { border-color: rgba(159,111,241,0.50); }
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-blue .word { color: #6FA3FF; }
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-teal .word { color: #33D6C0; }
+.slide[data-slide-key="enterprise-digital-employees"] .example-chip.is-violet .word { color: #B891F5; }
+        
