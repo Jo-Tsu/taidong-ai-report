@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>不要为了AI而AI，要为了经营而AI</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #05070d;
+      color: #fff;
+      font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      overflow: hidden;
+    }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 72px 84px 68px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 22% 22%, rgba(20, 86, 240, 0.36), transparent 38%),
+        radial-gradient(circle at 72% 58%, rgba(0, 209, 178, 0.18), transparent 34%),
+        linear-gradient(132deg, #091738 0%, #060a15 50%, #020307 100%);
+    }
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px);
+      background-size: 54px 54px;
+      opacity: 0.22;
+      mask-image: radial-gradient(circle at 55% 50%, black, transparent 78%);
+    }
+    .slide::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 51%;
+      width: 1010px;
+      height: 1010px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 1px solid rgba(125, 183, 255, 0.12);
+      box-shadow:
+        0 0 0 72px rgba(20, 86, 240, 0.025),
+        0 0 0 154px rgba(0, 209, 178, 0.018),
+        inset 0 0 96px rgba(84, 149, 255, 0.08);
+      pointer-events: none;
+    }
+    .logo {
+      position: absolute;
+      right: 78px;
+      top: 68px;
+      width: 166px;
+      height: auto;
+      z-index: 2;
+    }
+    .content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      height: 38px;
+      padding: 0 18px;
+      border-radius: 19px;
+      border: 1px solid rgba(145, 188, 255, 0.42);
+      background: rgba(20, 86, 240, 0.16);
+      color: #a9caff;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 800;
+    }
+    .hero {
+      align-self: center;
+      width: 1420px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 76px;
+      line-height: 1.14;
+      font-weight: 950;
+      letter-spacing: 0;
+      color: #f6fbff;
+      text-shadow: 0 0 42px rgba(66, 137, 255, 0.34);
+    }
+    h1 .ai {
+      color: #7eb0ff;
+    }
+    h1 .business {
+      color: #79f4dc;
+    }
+    .line {
+      width: 780px;
+      height: 2px;
+      margin: 42px auto 44px;
+      background: linear-gradient(90deg, transparent, rgba(125, 176, 255, 0.82), rgba(91, 243, 210, 0.82), transparent);
+      box-shadow: 0 0 26px rgba(20, 86, 240, 0.44);
+    }
+    .statement {
+      width: 1260px;
+      margin: 0 auto;
+      display: grid;
+      gap: 28px;
+      text-align: left;
+    }
+    .thought {
+      position: relative;
+      padding: 28px 34px 28px 42px;
+      border-radius: 18px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.085), rgba(255,255,255,0.035));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+      font-size: 32px;
+      line-height: 1.48;
+      font-weight: 800;
+      color: rgba(255,255,255,0.9);
+    }
+    .thought::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      bottom: 24px;
+      width: 5px;
+      border-radius: 0 5px 5px 0;
+      background: linear-gradient(180deg, #4b82ff, #3ee8c8);
+      box-shadow: 0 0 18px rgba(62, 232, 200, 0.46);
+    }
+    .thought strong {
+      color: #8ff5df;
+      font-weight: 950;
+    }
+    .final {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 88px;
+      border-radius: 18px;
+      background: linear-gradient(90deg, rgba(20, 86, 240, 0.28), rgba(0, 209, 178, 0.22));
+      border: 1px solid rgba(129, 215, 255, 0.28);
+      color: #f7fbff;
+      font-size: 30px;
+      font-weight: 950;
+      box-shadow: 0 0 52px rgba(20, 86, 240, 0.22);
+    }
+  </style>
+</head>
+<body>
+  <main class="slide">
+    <img class="logo" src="../../assets/ai-landing-notes/source/ppt/media/image2.png" alt="飞书" />
+    <section class="content">
+      <div class="eyebrow">第三章收束</div>
+      <div class="hero">
+        <h1>不要为了<span class="ai">AI</span>而<span class="ai">AI</span><br />要为了<span class="business">经营</span>而<span class="ai">AI</span></h1>
+        <div class="line"></div>
+        <div class="statement">
+          <div class="thought">从经营问题出发，把AI放进业务流程，把业务流程沉淀到飞书，让组织持续进化。</div>
+          <div class="thought">当AI真正成为企业每天工作的组成部分，它创造的就不再是一次效率提升，而是企业未来持续增长的新生产力。</div>
+        </div>
+      </div>
+      <div class="final">技术是手段，经营才是目的；流程是载体，组织进化才是结果。</div>
+    </section>
+  </main>
+</body>
+</html>

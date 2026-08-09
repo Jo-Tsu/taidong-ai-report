@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <base href="../../guangzhou-ceo-ai-sharing/">
+<script type="importmap">{"imports":{"@magic/htmlbox-lark-base-sdk":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","@lark-base-open/js-sdk":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","@lark-base-open/js-sdk/dist/index.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","@lark-base-open/js-sdk/dist/bitable_app.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://unpkg.com/@lark-base-open/js-sdk@1.0.2/dist/index.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://unpkg.com/@lark-base-open/js-sdk@1.0.2/dist/bitable_app.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://unpkg.com/@lark-base-open/js-sdk/dist/index.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://unpkg.com/@lark-base-open/js-sdk/dist/bitable_app.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://cdn.jsdelivr.net/npm/@lark-base-open/js-sdk@1.0.2/dist/index.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://cdn.jsdelivr.net/npm/@lark-base-open/js-sdk@1.0.2/dist/bitable_app.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://cdn.jsdelivr.net/npm/@lark-base-open/js-sdk/dist/index.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://cdn.jsdelivr.net/npm/@lark-base-open/js-sdk/dist/bitable_app.mjs":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://esm.sh/@lark-base-open/js-sdk":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B","https://esm.sh/@lark-base-open/js-sdk@1.0.2":"data:text/javascript;charset=utf-8,const%20bitable%20%3D%20globalThis.bitable%3B%0Aconst%20base%20%3D%20bitable%20%26%26%20bitable.base%3B%0Aconst%20bridge%20%3D%20bitable%20%26%26%20bitable.bridge%3B%0Aconst%20ui%20%3D%20bitable%20%26%26%20bitable.ui%3B%0Aconst%20workspace%20%3D%20bitable%20%26%26%20bitable.workspace%3B%0Aconst%20dashboard%20%3D%20bitable%20%26%26%20bitable.dashboard%3B%0Aconst%20FieldType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CText%3A1%2CNumber%3A2%2CSingleSelect%3A3%2CMultiSelect%3A4%2CDateTime%3A5%2CCheckbox%3A7%2CUser%3A11%2CPhone%3A13%2CUrl%3A15%2CAttachment%3A17%2CSingleLink%3A18%2CLookup%3A19%2CFormula%3A20%2CDuplexLink%3A21%2CLocation%3A22%2CGroupChat%3A23%2CObject%3A25%2CDenied%3A403%2CCreatedTime%3A1001%2CModifiedTime%3A1002%2CCreatedUser%3A1003%2CModifiedUser%3A1004%2CAutoNumber%3A1005%2CBarcode%3A99001%2CProgress%3A99002%2CCurrency%3A99003%2CRating%3A99004%2CEmail%3A99005%7D)%3B%0Aconst%20FieldUIType%20%3D%20Object.freeze(%7BNotSupport%3A'NotSupport'%2CText%3A'Text'%2CNumber%3A'Number'%2CProgress%3A'Progress'%2CCurrency%3A'Currency'%2CRating%3A'Rating'%2CStage%3A'Stage'%2CSingleSelect%3A'SingleSelect'%2CMultiSelect%3A'MultiSelect'%2CDateTime%3A'DateTime'%2CCheckbox%3A'Checkbox'%2CUser%3A'User'%2CGroupChat%3A'GroupChat'%2CPhone%3A'Phone'%2CUrl%3A'Url'%2CAttachment%3A'Attachment'%2CSingleLink%3A'SingleLink'%2CLookup%3A'Lookup'%2CFormula%3A'Formula'%2CDuplexLink%3A'DuplexLink'%2CLocation%3A'Location'%2CBarcode%3A'Barcode'%2CDenied%3A'Denied'%2CCreatedTime%3A'CreatedTime'%2CModifiedTime%3A'ModifiedTime'%2CCreatedUser%3A'CreatedUser'%2CModifiedUser%3A'ModifiedUser'%2CAutoNumber%3A'AutoNumber'%2CButton%3A'Button'%2CEmail%3A'Email'%2CObject%3A'Object'%7D)%3B%0Aconst%20ViewType%20%3D%20Object.freeze(%7BNotSupport%3A0%2CGrid%3A1%2CKanban%3A2%2CForm%3A3%2CGallery%3A4%2CGantt%3A5%2CHierarchy%3A6%2CCalendar%3A7%2CWidgetView%3A100%7D)%3B%0Aconst%20DashboardState%20%3D%20Object.freeze(%7BCreate%3A'Create'%2CConfig%3A'Config'%2CView%3A'View'%2CFullScreen%3A'FullScreen'%7D)%3B%0Aconst%20ToastType%20%3D%20Object.freeze(%7Binfo%3A'info'%2Csuccess%3A'success'%2Cwarning%3A'warning'%2Cerror%3A'error'%2Cloading%3A'loading'%7D)%3B%0Aconst%20WidgetBaseEvent%20%3D%20Object.freeze(%7BTableAdd%3A'TableAdd'%2CTableDelete%3A'TableDelete'%2CSelectionChange%3A'SelectionChange'%2CPermissionChange%3A'PermissionChange'%2CUploadStatusChange%3A'UploadStatusChange'%7D)%3B%0Aconst%20WidgetFieldEvent%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20WidgetTableEvent%20%3D%20Object.freeze(%7BFieldAdd%3A'FieldAdd'%2CFieldDelete%3A'FieldDelete'%2CFieldModify%3A'FieldModify'%2CRecordAdd%3A'RecordAdd'%2CRecordModify%3A'RecordModify'%2CRecordDelete%3A'RecordDelete'%7D)%3B%0Aconst%20BridgeEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UIEvent%20%3D%20Object.freeze(%7BFetchDebugShortcut%3A'FetchDebugShortcut'%7D)%3B%0Aconst%20DashboardEvent%20%3D%20Object.freeze(%7BDataChange%3A'DataChange'%2CConfigChange%3A'ConfigChange'%2CThemeChange%3A'ThemeChange'%7D)%3B%0Aconst%20UploadFileTaskStatus%20%3D%20Object.freeze(%7BPending%3A1%2CInflight%3A2%2CSuccess%3A3%2CError%3A4%2CPaused%3A5%7D)%3B%0Aconst%20baseEventPrefix%20%3D%20'BaseEvent'%3B%0Aconst%20tableEventPrefix%20%3D%20'TableEvent'%3B%0Aconst%20fieldEventPrefix%20%3D%20'FieldEvent'%3B%0Aconst%20bridgeEventPrefix%20%3D%20'BridgeEvent'%3B%0Aconst%20dashboardWidgetEventPrefix%20%3D%20'DashboardEvent'%3B%0Aconst%20uiEventPrefix%20%3D%20'UIEvent'%3B%0Aconst%20getBaseEventKey%20%3D%20eventName%20%3D%3E%20baseEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getTableEventKey%20%3D%20(tableId%2CeventName)%20%3D%3E%20tableEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getFieldEventKey%20%3D%20(tableId%2CfieldId%2CeventName)%20%3D%3E%20fieldEventPrefix%20%2B%20'%3A'%20%2B%20tableId%20%2B%20'%3A'%20%2B%20fieldId%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getBridgeEventKey%20%3D%20eventName%20%3D%3E%20bridgeEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getDashboardEventKey%20%3D%20eventName%20%3D%3E%20dashboardWidgetEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20getUIEventKey%20%3D%20eventName%20%3D%3E%20uiEventPrefix%20%2B%20'%3A'%20%2B%20eventName%3B%0Aconst%20checkers%20%3D%20Object.freeze(%7B%0A%20%20isEmpty%3Av%3D%3Ev%3D%3Dnull%7C%7C(Array.isArray(v)%26%26v.length%3D%3D%3D0)%2C%0A%20%20isSegmentItem%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.type%3D%3D%3D'string'%2C%0A%20%20isSegments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.type%3D%3D%3D'string')%2C%0A%20%20isSingleSelect%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.text%3D%3D%3D'string'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isMultiSelect%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.text%3D%3D%3D'string')%2C%0A%20%20isUsers%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isAttachment%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.token%3D%3D%3D'string'%2C%0A%20%20isAttachments%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.token%3D%3D%3D'string')%2C%0A%20%20isCheckbox%3Av%3D%3Etypeof%20v%3D%3D%3D'boolean'%2C%0A%20%20isNumber%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isPhone%3Av%3D%3Etypeof%20v%3D%3D%3D'string'%2C%0A%20%20isTimestamp%3Av%3D%3Etypeof%20v%3D%3D%3D'number'%2C%0A%20%20isLocation%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.location%3D%3D%3D'string'%2C%0A%20%20isGroupChat%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26typeof%20v.id%3D%3D%3D'string'%2C%0A%20%20isGroupChats%3Av%3D%3EArray.isArray(v)%26%26v.every(x%3D%3E!!x%26%26typeof%20x%3D%3D%3D'object'%26%26typeof%20x.id%3D%3D%3D'string')%2C%0A%20%20isLink%3Av%3D%3E!!v%26%26typeof%20v%3D%3D%3D'object'%26%26Array.isArray(v.recordIds)%0A%7D)%3B%0Aconst%20viewCheckers%20%3D%20Object.freeze(%7B%7D)%3B%0Aconst%20createApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aconst%20createCompatibleApiKey%20%3D%20key%20%3D%3E%20key%3B%0Aclass%20UIBuilder%20%7B%7D%0Aexport%20%7Bbitable%2Cbase%2Cbridge%2Cui%2Cworkspace%2Cdashboard%2CFieldType%2CFieldUIType%2CViewType%2CDashboardState%2CToastType%2CWidgetBaseEvent%2CWidgetFieldEvent%2CWidgetTableEvent%2CBridgeEvent%2CUIEvent%2CDashboardEvent%2CUploadFileTaskStatus%2CbaseEventPrefix%2CtableEventPrefix%2CfieldEventPrefix%2CbridgeEventPrefix%2CdashboardWidgetEventPrefix%2CuiEventPrefix%2CgetBaseEventKey%2CgetTableEventKey%2CgetFieldEventKey%2CgetBridgeEventKey%2CgetDashboardEventKey%2CgetUIEventKey%2Ccheckers%2CviewCheckers%2CcreateApiKey%2CcreateCompatibleApiKey%2CUIBuilder%7D%3B%0Aexport%20default%20bitable%3B"}}</script>
+
+<script>
+(function(){
+var __rpcId=0,__pending={},__topbarHandlers=[],__magicInitPromise=null;
+function __miaobiRpcDebugEnabled(){
+  try{
+    if(window.__MIAOBI_RPC_DEBUG__===true)return true;
+    if(window.__MIAOBI_RPC_DEBUG__===false)return false;
+    var v=localStorage.getItem('miaobi-rpc-debug');
+    return v==='1'||v==='true'||v==='on';
+  }catch(e){}
+  return false;
+}
+function __miaobiRpcLog(){
+  if(!__miaobiRpcDebugEnabled())return;
+  try{console.log.apply(console,arguments);}catch(e){}
+}
+function __miaobiRpcWarn(){
+  if(!__miaobiRpcDebugEnabled())return;
+  try{console.warn.apply(console,arguments);}catch(e){}
+}
+function __miaobiRpcError(){
+  if(!__miaobiRpcDebugEnabled())return;
+  try{console.error.apply(console,arguments);}catch(e){}
+}
+function __magicWrapHtmlToImageFilter(userFilter){
+  return function(node){
+    try{
+      if(node&&node.tagName&&String(node.tagName).toUpperCase()==='IFRAME'){
+        try{
+          var doc=node.contentDocument;
+          if(doc&&doc.body){
+            // Accessing contentWindow.document is the path that throws for
+            // opaque/cross-origin frames; probe it here while we can recover.
+            try{void node.contentWindow.document;}catch(frameError){return false;}
+          }else{
+            return false;
+          }
+        }catch(frameError){
+          return false;
+        }
+      }
+      return typeof userFilter==='function'?userFilter(node):true;
+    }catch(e){
+      return false;
+    }
+  };
+}
+window.addEventListener('message',function(e){
+  var d=e.data;if(!d)return;
+  if(d.type==='__magic_topbar_action'){
+    var detail=d.detail||{};
+    try{window.dispatchEvent(new CustomEvent('magic:topbar-action',{detail:detail}));}catch(x){}
+    __topbarHandlers.slice().forEach(function(fn){try{fn(detail);}catch(x){}});
+    return;
+  }
+  if(d.type!=='__magic_rpc_response')return;
+  var h=__pending[d.id];if(!h){__miaobiRpcWarn('[miaobi-rpc] response for unknown id',d.id);return;}
+  if(d.stream_chunk!==undefined){if(h.onChunk)h.onChunk(d.stream_chunk);return;}
+  delete __pending[d.id];
+  if(d.error){__miaobiRpcError('[miaobi-rpc] response error id='+d.id,d.error);h.reject(new Error(d.error));}
+  else{__miaobiRpcLog('[miaobi-rpc] response ok id='+d.id,d.result);h.resolve(d.result);}
+});
+
+// html2canvas compatibility shim:
+// In CSP-sandboxed HTML Box pages, blob/data/srcdoc iframes and /app HTTP pages without allow-same-origin,
+// html2canvas internally creates hidden iframes
+// to clone the document for rendering. Those cloned iframes also get a null/opaque origin — a DIFFERENT
+// opaque origin from the parent sandbox iframe — so accessing their .document throws SecurityError.
+// Even foreignObjectRendering:true does NOT help because html2canvas STILL calls DocumentCloner first.
+// The only real fix: replace html2canvas entirely with html-to-image, which uses SVG <foreignObject>
+// natively and never creates internal iframes.
+// Strategy: always install a shim in HTML Box runtime. It checks window.htmlToImage at CALL TIME
+// (not install time), so late CDN loading and dynamic injection both work transparently.
+(function(){
+  var H2I_CDN="";
+
+  // The shim checks window.htmlToImage at CALL TIME (not install time).
+  // If htmlToImage isn't loaded yet, it dynamically injects the script and retries.
+  var _shim=function(node,opts){
+    opts=opts||{};
+    function doRender(){
+      var pr=opts.scale||opts.pixelRatio||(window.devicePixelRatio||1);
+      // Width: use the full viewport width so the canvas matches what the user sees.
+      // node.scrollWidth (e.g. 1100px) is the container width, but the page may be
+      // wider (e.g. 1787px). If we cap the canvas at 1100px we lose the right side.
+      // Using window.innerWidth keeps the canvas at full viewport width; the
+      // element's computed "margin: 0 auto" (inlined by html-to-image) then
+      // naturally centers it — no right-side clipping, background fills correctly.
+      var w=opts.width||opts.windowWidth||window.innerWidth||document.documentElement.clientWidth||node.scrollWidth||node.offsetWidth;
+      var h=opts.height||opts.windowHeight||node.scrollHeight||node.offsetHeight;
+      return window.htmlToImage.toCanvas(node,{
+        backgroundColor:opts.backgroundColor,
+        width:w,height:h,pixelRatio:pr,cacheBust:true,
+        filter:__magicWrapHtmlToImageFilter(opts.filter)
+      });
+    }
+    if(window.htmlToImage&&typeof window.htmlToImage.toCanvas==='function'){
+      return doRender();
+    }
+    // html-to-image not yet loaded — inject script dynamically and retry once
+    return new Promise(function(res,rej){
+      var s=document.createElement('script');
+      if(!H2I_CDN){rej(new Error('offline'));return;}s.src=H2I_CDN;
+      s.onload=function(){
+        if(window.htmlToImage&&typeof window.htmlToImage.toCanvas==='function'){
+          res(doRender());
+        }else{
+          rej(new Error('[magic-shim] html-to-image failed to initialize after dynamic load'));
+        }
+      };
+      s.onerror=function(){rej(new Error('[magic-shim] html-to-image CDN unavailable: '+H2I_CDN));};
+      (document.head||document.documentElement).appendChild(s);
+    });
+  };
+  _shim.__magic_shim=true;
+
+  // Replace window.html2canvas with our shim.
+  // Use a getter-only property descriptor: the getter always returns _shim,
+  // and the setter silently drops non-shim values (prevents html2canvas.min.js from restoring itself).
+  function installShim(){
+    var cur=window.html2canvas;
+    if(cur===_shim)return; // already installed
+    try{
+      Object.defineProperty(window,'html2canvas',{
+        configurable:true,enumerable:true,
+        get:function(){return _shim;},
+        set:function(v){/* drop non-shim writes; ignore */}
+      });
+    }catch(e){
+      // defineProperty unsupported in this context — fall back to direct assignment
+      try{window.html2canvas=_shim;}catch(e2){}
+    }
+  }
+
+  installShim();
+  try{document.addEventListener('DOMContentLoaded',installShim);}catch(e){}
+  try{window.addEventListener('load',installShim);}catch(e){}
+})();
+
+function rpc(method,args){
+  return new Promise(function(res,rej){
+    var id=++__rpcId;__pending[id]={resolve:res,reject:rej};
+    __miaobiRpcLog('[miaobi-rpc] send id='+id,method,args);
+    parent.postMessage({type:'__magic_rpc',id:id,method:method,args:args},'*');
+  });
+}
+function rpcAfterInit(method,args){
+  var initPromise=__magicInitPromise;
+  if(initPromise&&typeof initPromise.then==='function'){
+    return initPromise.then(function(){return rpc(method,args);});
+  }
+  return rpc(method,args);
+}
+function rpcStream(method,args,onChunk){
+  return new Promise(function(res,rej){
+    var id=++__rpcId;__pending[id]={resolve:res,reject:rej,onChunk:onChunk};
+    __miaobiRpcLog('[miaobi-rpc] send(stream) id='+id,method,args);
+    parent.postMessage({type:'__magic_rpc',id:id,method:method,args:args},'*');
+  });
+}
+function isMagicMeUrl(input){
+  try{
+    var raw=typeof input==='string'?input:(input&&input.url)||'';
+    if(!raw)return false;
+    var u=new URL(raw, window.magic&&window.magic.parentHref || window.__magic_parent_href || location.href);
+    return u.pathname==='/api/me';
+  }catch(e){return false;}
+}
+function jsonResponse(data,status){
+  status=status||200;
+  try{
+    return new Response(JSON.stringify(data),{status:status,headers:{'Content-Type':'application/json'}});
+  }catch(e){
+    return {ok:status>=200&&status<300,status:status,json:function(){return Promise.resolve(data);},text:function(){return Promise.resolve(JSON.stringify(data));}};
+  }
+}
+var __nativeFetch=window.fetch&&window.fetch.bind(window);
+if(__nativeFetch){
+  window.fetch=function(input,init){
+    if(isMagicMeUrl(input)){
+      return window.magic.getCurrentUserInfo().then(function(user){
+        var data=user?{code:0,data:user}:{code:401,msg:'未登录'};
+        return jsonResponse(data, user?200:401);
+      });
+    }
+    return __nativeFetch(input,init);
+  };
+}
+function setCurrentUserInfo(user){
+  try{
+    if(user){
+      window.magic.currentUserInfo=user;
+      window.magic.user=user;
+    }
+  }catch(e){}
+  return user||null;
+}
+window.magic={
+  ai:function(data,onMsg){
+    if(typeof onMsg==='function')data=Object.assign({},data,{stream:true});
+    return rpcStream('ai',[data],onMsg?function(c){onMsg(c.text,c.reasoning);}:undefined);
+  },
+  proxy:{post:function(url,data,cfg,cb){
+    return rpcStream('proxy',[url,data,cfg],cb?function(c){cb(c.text,c.reasoning);}:undefined);
+  }},
+  api:function(p){return rpcAfterInit('api',[p]);},
+  request:function(options){return rpc('http.request',[options||{}]);},
+  http:{
+    request:function(options){return rpc('http.request',[options||{}]);},
+    get:function(url,cfg){return rpc('http.request',[Object.assign({},cfg||{},{method:'GET',url:url})]);},
+    post:function(url,data,cfg){return rpc('http.request',[Object.assign({},cfg||{},{method:'POST',url:url,data:data})]);},
+    put:function(url,data,cfg){return rpc('http.request',[Object.assign({},cfg||{},{method:'PUT',url:url,data:data})]);},
+    delete:function(url,cfg){return rpc('http.request',[Object.assign({},cfg||{},{method:'DELETE',url:url})]);}
+  },
+  me:function(){return rpc('me',[]);},
+  getCurrentUser:function(){return rpc('me',[]).then(function(r){return setCurrentUserInfo(r&&r.code===0?r.data:null);});},
+  getCurrentUserInfo:function(){return rpc('me',[]).then(function(r){return setCurrentUserInfo(r&&r.code===0?r.data:null);});},
+  getUserInfoById:function(id,t){return rpc('getUserInfoById',[id,t||'open_id']);},
+  open_id_to_user_id:function(openId){return rpcAfterInit('open_id_to_user_id',[openId]);},
+  base_records_search:function(){return rpcAfterInit('base_records_search',Array.from(arguments));},
+  base_records_get:function(){return rpcAfterInit('base_records_get',Array.from(arguments));},
+  base_record_create:function(){return rpcAfterInit('base_record_create',Array.from(arguments));},
+  base_record_update:function(){return rpcAfterInit('base_record_update',Array.from(arguments));},
+  topbar:{
+    setActions:function(items){return rpc('topbar.set_actions',[items||[]]);},
+    clearActions:function(){return rpc('topbar.clear_actions',[]);},
+    setDarkMode:function(enabled){return rpc('topbar.set_dark_mode',[!!enabled]);},
+    setTheme:function(theme){return rpc('topbar.set_theme',[theme]);},
+    onAction:function(fn){
+      if(typeof fn!=='function')return function(){};
+      __topbarHandlers.push(fn);
+      return function(){
+        var next=[];
+        for(var i=0;i<__topbarHandlers.length;i++){if(__topbarHandlers[i]!==fn)next.push(__topbarHandlers[i]);}
+        __topbarHandlers=next;
+      };
+    }
+  },
+  setTopbarItems:function(items){return rpc('topbar.set_actions',[items||[]]);},
+  clearTopbarItems:function(){return rpc('topbar.clear_actions',[]);},
+  setTopbarDarkMode:function(enabled){return window.magic.topbar.setDarkMode(enabled);},
+  setTopbarTheme:function(theme){return window.magic.topbar.setTheme(theme);},
+  onTopbarAction:function(fn){return window.magic.topbar.onAction(fn);},
+  store:{
+    get:function(k){return rpc('store.get',[k]);},
+    set:function(k,v){return rpc('store.set',[k,v]);},
+    global_get:function(k){return rpc('store.get',[k]);},
+    global_set:function(k,v){return rpc('store.set',[k,v]);}
+  },
+  starling:new Proxy({},{get:function(_,p){
+    if(p==='then')return undefined;
+    if(typeof p!=='string')return undefined;
+    return function(){var a=Array.from(arguments);
+      return Promise.resolve(new Response(JSON.stringify({code:0,data:null}),{status:200,headers:{'Content-Type':'application/json'}}))||Promise.resolve({ok:true,text:function(){return Promise.resolve(JSON.stringify({code:0,data:null}))}})
+        .then(function(r){return r.text();}).then(function(t){try{return JSON.parse(t);}catch(e){return t;}});
+    };
+  }}),
+  init:function(token){__magicInitPromise=rpc('init',[token]);return __magicInitPromise;},
+  initSDK:function(opts){return rpc('initSDK',[opts]);},
+  setFavicon:function(url){return rpc('set_favicon',[url]);},
+  navigate:function(url){return rpc('navigate_top',[String(url||'')]);},
+  reload:function(){return rpc('reload_top',[]);},
+  user:{"name":"","en_name":"","avatar_url":"","email":"","open_id":"","user_id":"","union_id":""},
+  currentUserInfo:{"name":"","en_name":"","avatar_url":"","email":"","open_id":"","user_id":"","union_id":""},
+  // Parent page URL (outer page hosting this iframe). Useful in blob/srcdoc sandbox.
+  parentHref:"",
+  // Real iframe href (e.g. blob:...) captured before we override location.href getter.
+  iframeHref:'',
+  params:Object.fromEntries(new URLSearchParams("")),
+  searchParams:"",
+};
+window.magic.redis=window.magic.store;
+window.lark=window.magic;
+try{
+  var __magicNamePayload=null;
+  if(window.name){
+    try{__magicNamePayload=JSON.parse(window.name);}catch(e){}
+  }
+  var __magicNameUser=__magicNamePayload&&__magicNamePayload.__magic_user;
+  if(__magicNameUser&&typeof __magicNameUser==='object'&&__magicNameUser.open_id&&(!window.magic.user||!window.magic.user.open_id)){
+    window.magic.user=__magicNameUser;
+    window.magic.currentUserInfo=__magicNameUser;
+  }
+}catch(e){}
+try{
+  window.addEventListener('message',function(e){
+    var d=e&&e.data;
+    var u=d&&d.type==='__magic_set_user'&&d.user;
+    if(u&&typeof u==='object'&&u.open_id){
+      window.magic.user=u;
+      window.magic.currentUserInfo=u;
+    }
+  });
+}catch(e){}
+window.__magic_sdk_window=function(fallback){
+  var href=(window.magic&&window.magic.parentHref)||window.__magic_parent_href||'';
+  return {
+    bitable:window.bitable||fallback&&fallback.bitable,
+    lark:window.lark||window.magic,
+    h5sdk:window.h5sdk||window.magic,
+    tt:window.tt||window.magic,
+    magic:window.magic,
+    location:{href:href||String(location&&location.href||'')},
+  };
+};
+// Some shims read this global (used by top/parent proxy getters); keep it in sync.
+try{window.__magic_parent_href=window.magic.parentHref||'';}catch(e){}
+(function(){
+  var _s="";
+  if(!_s)return;
+  // Extra fallback for srcdoc/about:srcdoc:
+  // Some user pages parse params from window.location.href (e.g. split('?id='))
+  // but srcdoc makes href about:srcdoc with empty search. Hash is always writable,
+  // so mirror the parent query into location.hash to keep href-based parsers working.
+  try{
+    if(String(location && location.href || '').startsWith('about:srcdoc') && (!location.hash || location.hash === '#')){
+      location.hash = _s; // e.g. "#?id=xxx" or "#?id=xxx?code=yyy"
+    }
+  }catch(e){}
+  // 方案0：优先尝试用 History API 把 query 写进当前文档 URL（仅非 opaque origin）
+  // 目的：让业务代码可以通过 window.location.href / location.search 直接读到外层参数。
+  // 对于 sandbox + blob/data 这类 origin 为 'null' 的场景，History API 会失败，直接跳过。
+  try{
+    if(String(location && location.origin) !== 'null' && typeof history!=='undefined' && history && typeof history.replaceState==='function'){
+      history.replaceState(null, document.title, _s);
+      if(location.search===_s)return;
+    }
+  }catch(e){console.warn('[magic] history.replaceState failed:',e && e.message?e.message:e);}
+  // 方案1：在 location 实例上定义 own property 遮蔽原型 getter
+  try{
+    Object.defineProperty(location,'search',{get:function(){return _s;},configurable:true,enumerable:true});
+    if(location.search===_s)return;
+  }catch(e){console.warn('[magic] location.search defineProperty failed:',e.message);}
+  // 方案2：patch Location.prototype.search
+  try{
+    Object.defineProperty(Location.prototype,'search',{get:function(){return _s;},configurable:true,enumerable:true});
+    if(location.search===_s)return;
+  }catch(e){console.warn('[magic] Location.prototype.search defineProperty failed:',e.message);}
+  // 方案3：兜底 patch URLSearchParams，拦截空串参数
+  try{
+    var _N=URLSearchParams;
+    window.URLSearchParams=function(v){return new _N(v===undefined||v===''?_s:v);};
+    window.URLSearchParams.prototype=_N.prototype;
+    console.warn('[magic] fallback to URLSearchParams patch');
+  }catch(e){}
+})();
+
+// ── Native window proxy: bitable / h5sdk / tt ────────────────────────────────
+// Proxies window.bitable, window.h5sdk, window.tt from the parent page via RPC.
+// Handles both Promise-based and callback-based APIs.
+// Objects with methods are returned as opaque "handles" and re-proxied on use.
+(function(){
+  var _nc=0,_ncb={};
+  window.addEventListener('message',function(e){
+    var d=e.data;if(!d||d.type!=='__magic_native_cb')return;
+    var cb=_ncb[d.cid];if(cb)try{cb.apply(null,d.a||[]);}catch(x){}
+  });
+  function mkProxy(path,snap,items){
+    return new Proxy(function(){},{
+      get:function(_,p){
+        // Symbol handling: support Symbol.iterator for for...of; block others
+        if(typeof p!=='string'){
+          if(p===Symbol.iterator&&items!=null)return function(){return items[Symbol.iterator]();};
+          return undefined;
+        }
+        if(p==='then')return undefined;
+        // Return snapshot primitive directly (e.g. length, id) without an RPC round-trip
+        if(snap&&Object.prototype.hasOwnProperty.call(snap,p))return snap[p];
+        return mkProxy(path.concat(p));
+      },
+      apply:function(_,__,a){
+        var ci=null;
+        if(a.length&&typeof a[a.length-1]==='function'){ci=++_nc;_ncb[ci]=a.pop();}
+        a=a.map(function(x){
+          if(x&&x.__nh__!=null)return{__nh:x.__nh__};
+          if(x&&typeof x==='object'&&!Array.isArray(x)){
+            var cbk={},hasCb=false,r={};
+            Object.keys(x).forEach(function(k){
+              if(typeof x[k]==='function'){cbk[k]=++_nc;_ncb[_nc]=x[k];hasCb=true;}
+              else r[k]=x[k];
+            });
+            if(hasCb){r.__cbk__=cbk;return r;}
+          }
+          return x;
+        });
+        return rpc('native_call',[path,a,ci]).then(wrap);
+      }
+    });
+  }
+  function wrap(v){
+    if(v==null)return v;
+    if(typeof v==='object'&&v.__nh!=null){
+      // Extract snapshot: primitives into snap, iterable items into items
+      var snap={},rawItems=null;
+      Object.keys(v).forEach(function(k){
+        if(k==='__nh')return;
+        if(k==='__items'){rawItems=v[k];return;}
+        snap[k]=v[k];
+      });
+      var items=rawItems?rawItems.map(wrap):null;
+      var p=mkProxy(['__nh',v.__nh],snap,items);
+      try{Object.defineProperty(p,'__nh__',{value:v.__nh,configurable:true});}catch(e){}
+      return p;
+    }
+    if(Array.isArray(v))return v.map(wrap);
+    if(typeof v==='object'){var r={};Object.keys(v).forEach(function(k){r[k]=wrap(v[k]);});return r;}
+    return v;
+  }
+  window.bitable=mkProxy(['bitable']);
+  window.h5sdk=mkProxy(['h5sdk']);
+  window.tt=mkProxy(['tt']);
+})();
+
+// ── location.href unified patch ───────────────────────────────────────────────
+// Goal: window.location.href = url inside the iframe must navigate the PARENT,
+//       not the iframe itself. Three strategies are attempted in order:
+//
+//  S1  window.location Proxy   — replace window.location with a Proxy object.
+//      In null-origin sandboxed iframes Chrome allows this defineProperty.
+//      Intercepts BOTH getter and setter at the object level.
+//
+//  S2  Location.prototype.href — patch the prototype getter/setter.
+//      Works when configurable:true and the host object respects descriptors.
+//
+//  S3  Navigation API          — window.navigation 'navigate' event (Chrome 102+).
+//      Prefer synchronous top navigation when sandbox allows it; fallback to RPC.
+(function(){
+  var _ph="";
+  var _rl=location; // capture real location BEFORE any override
+  var _rt=window.top; // capture real top BEFORE any later shadowing
+  var _rp0=window.parent; // capture real parent BEFORE any later shadowing
+  var _desc=Object.getOwnPropertyDescriptor(Location.prototype,'href')||{};
+  var _og=_desc.get, _os=_desc.set;
+  // Expose both parent href and the real iframe href (blob/srcdoc) for user code.
+  // Note: after the getter override, reading location.href returns parent href by design.
+  try{
+    if(window.magic){
+      window.magic.parentHref = window.magic.parentHref || _ph || '';
+      window.__magic_parent_href = window.magic.parentHref || '';
+    }
+  }catch(e){}
+  try{
+    var _realHref='';
+    try{_realHref=String(_og?_og.call(_rl):(_rl&&_rl.href)||'');}catch(e2){}
+    if(window.magic)window.magic.iframeHref=_realHref;
+  }catch(e){}
+  function isSchemeUrl(u){
+    try{
+      if(!u||typeof u!=='string')return false;
+      if(u.startsWith('http://')||u.startsWith('https://')||u.startsWith('//')||u.startsWith('/')||u.startsWith('#'))return false;
+      return u.indexOf('://')>0;
+    }catch(e){return false;}
+  }
+  function hrefGet(){
+    var self=this||_rl;
+    // Always prefer outer-page href when provided (works for blob: and srcdoc:).
+    try{if(_ph)return _ph;}catch(e){}
+    try{return _og?_og.call(self):'';}catch(e){return '';}
+  }
+  function directTopNavigate(url){
+    var sv=String(url==null?'':url);
+    if(!sv)return false;
+    try{_rt.location.href=sv;return true;}catch(e){}
+    try{_rp0.location.href=sv;return true;}catch(e){}
+    try{window.top.location.href=sv;return true;}catch(e){}
+    try{window.parent.location.href=sv;return true;}catch(e){}
+    return false;
+  }
+  function directTopReload(){
+    try{_rt.location.reload();return true;}catch(e){}
+    try{_rp0.location.reload();return true;}catch(e){}
+    try{window.top.location.reload();return true;}catch(e){}
+    try{window.parent.location.reload();return true;}catch(e){}
+    return false;
+  }
+  function hrefSet(v){
+    var sv=String(v==null?'':v);
+    if(sv.startsWith('#')){try{if(_os)_os.call(_rl,sv);}catch(e){}return;}
+    if(isSchemeUrl(sv)){rpc('open_url',[sv]);return;}
+    if(directTopNavigate(sv))return;
+    rpc('navigate_top',[sv]);
+  }
+  // Shim window.open for URL schemes
+  var _origOpen=window.open;
+  window.open=function(url,target,features){
+    if(isSchemeUrl(String(url||''))){rpc('open_url',[String(url)]);return null;}
+    return _origOpen?_origOpen.call(window,url,target,features):null;
+  };
+  // ── S1: Replace window.location with a Proxy ──────────────────────────────
+  var _s1ok=false;
+  try{
+    var _lp=new Proxy(Object.create(null),{
+      get:function(_,p){
+        if(p==='href')return hrefGet.call(_rl);
+        if(p==='assign'||p==='replace')return function(url){hrefSet.call(_rl,String(url||''));};
+        if(p==='reload')return function(){if(directTopReload())return; return rpc('reload_top',[]);};
+        if(p==='toString'||p===Symbol.toPrimitive)return function(){return hrefGet.call(_rl);};
+        try{var v=_rl[p];return typeof v==='function'?v.bind(_rl):v;}catch(e){return undefined;}
+      },
+      set:function(_,p,v){
+        if(p==='href'){hrefSet.call(_rl,v);return true;}
+        try{_rl[p]=v;}catch(e){}
+        return true;
+      }
+    });
+    Object.defineProperty(window,'location',{get:function(){return _lp;},configurable:true});
+    _s1ok=true;
+  }catch(e){}
+  // ── S2: Patch Location.prototype.href ─────────────────────────────────────
+  if(!_s1ok){
+    try{Object.defineProperty(Location.prototype,'href',{get:hrefGet,set:hrefSet,configurable:true});}catch(e){}
+    try{Object.defineProperty(location,'href',{get:hrefGet,set:hrefSet,configurable:true,enumerable:true});}catch(e){}
+  }
+  // ── S3: Navigation API (Chrome 102+) ──────────────────────────────────────
+  try{
+    if(typeof navigation!=='undefined'&&navigation&&typeof navigation.addEventListener==='function'){
+      navigation.addEventListener('navigate',function(e){
+        var url=String((e.destination&&e.destination.url)||'');
+        if(!url||url==='about:srcdoc')return;
+        // Allow pure hash change (same document, only fragment differs)
+        try{
+          var _cur=new URL(String(_og?_og.call(_rl):''));
+          var _dest=new URL(url);
+          if(_cur.protocol===_dest.protocol&&_cur.host===_dest.host&&_cur.pathname===_dest.pathname&&_cur.search===_dest.search){return;}
+        }catch(x){}
+        // Prefer synchronous top navigation; fallback to parent RPC if blocked.
+        try{e.preventDefault();}catch(x){}
+        if(directTopNavigate(url))return;
+        rpc('navigate_top',[url]);
+      });
+    }
+  }catch(e){}
+})();
+
+// ── window.top / window.parent navigation proxy ───────────────────────────────
+// Best-effort: shadow window.top and window.parent with proxies whose
+// location.href setter prefers direct top navigation, then falls back to RPC.
+// If defineProperty is blocked by the engine, magic.navigate(url) is the fallback.
+(function(){
+  var _rp=window.parent; // capture real parent before shadowing
+  function directTopNavigateProxy(url){
+    var sv=String(url==null?'':url);
+    if(!sv)return false;
+    try{_rp.location.href=sv;return true;}catch(e){}
+    return false;
+  }
+  function directTopReloadProxy(){
+    try{_rp.location.reload();return true;}catch(e){}
+    return false;
+  }
+  var _loc={};
+  Object.defineProperty(_loc,'href',{
+    get:function(){return typeof window.__magic_parent_href==='string'?window.__magic_parent_href:'';},
+    set:function(v){var sv=String(v||''); if(!directTopNavigateProxy(sv)) rpc('navigate_top',[sv]);}
+  });
+  Object.defineProperty(_loc,'reload',{
+    value:function(){ if(!directTopReloadProxy()) return rpc('reload_top',[]); },
+    configurable:true
+  });
+  var _frame={
+    location:_loc,
+    bitable:window.bitable,
+    h5sdk:window.h5sdk,
+    tt:window.tt,
+    lark:window.lark,
+    magic:window.magic,
+    postMessage:function(m,o,t){_rp.postMessage(m,o||'*',t);}
+  };
+  try{Object.defineProperty(window,'top',{get:function(){return _frame;},configurable:true});}catch(e){}
+  try{Object.defineProperty(window,'parent',{get:function(){return _frame;},configurable:true});}catch(e){}
+})();
+})();
+</script>
+<script>
+(function(){
+  // ── RPC to parent ──────────────────────────────────────────────────────────
+  var _sid=0,_spnd={};
+  window.addEventListener('message',function(e){
+    var d=e.data;if(!d||d.type!=='__magic_storage_resp')return;
+    var p=_spnd[d.id];if(!p)return;delete _spnd[d.id];
+    if(d.error)p[1](new Error(String(d.error)));else p[0](d.result);
+  });
+  function scall(m,a){return new Promise(function(res,rej){var id=++_sid;_spnd[id]=[res,rej];parent.postMessage({type:'__magic_storage',id:id,method:m,args:a||[]},'*');});}
+
+  // ── Event emitter helpers ──────────────────────────────────────────────────
+  function mkEvt(obj){obj._h={};obj.addEventListener=function(t,f){(this._h[t]=this._h[t]||[]).push(f);};obj.removeEventListener=function(t,f){this._h[t]&&(this._h[t]=this._h[t].filter(function(x){return x!==f;}));};return obj;}
+  function fire(obj,t,ev){(obj._h&&obj._h[t]||[]).forEach(function(f){try{f(ev);}catch(e){}});var h=obj['on'+t];if(typeof h==='function')try{h(ev);}catch(e){}}
+
+  // ── localStorage proxy ─────────────────────────────────────────────────────
+  // Start with empty cache; async load from parent merges in persisted values.
+  // Writes are always synchronous (in-memory) + async (persisted to parent).
+  var _lsc={};
+  scall('ls_getAll',[]).then(function(all){if(all)Object.assign(_lsc,all);});
+  var _fLS={
+    getItem:function(k){k=String(k);return _lsc.hasOwnProperty(k)?String(_lsc[k]):null;},
+    setItem:function(k,v){k=String(k);v=String(v);_lsc[k]=v;scall('ls_set',[k,v]);},
+    removeItem:function(k){k=String(k);delete _lsc[k];scall('ls_del',[k]);},
+    clear:function(){_lsc={};scall('ls_clear',[]);},
+    key:function(n){return Object.keys(_lsc)[n]||null;},
+    get length(){return Object.keys(_lsc).length;}
+  };
+  try{Object.defineProperty(window,'localStorage',{get:function(){return _fLS;},configurable:true});}catch(e){window.localStorage=_fLS;}
+
+  // ── sessionStorage proxy (in-memory, no persistence needed) ───────────────
+  var _ssc={};
+  var _fSS={
+    getItem:function(k){k=String(k);return _ssc.hasOwnProperty(k)?String(_ssc[k]):null;},
+    setItem:function(k,v){_ssc[String(k)]=String(v);},
+    removeItem:function(k){delete _ssc[String(k)];},
+    clear:function(){_ssc={};},
+    key:function(n){return Object.keys(_ssc)[n]||null;},
+    get length(){return Object.keys(_ssc).length;}
+  };
+  try{Object.defineProperty(window,'sessionStorage',{get:function(){return _fSS;},configurable:true});}catch(e){window.sessionStorage=_fSS;}
+
+  // ── IndexedDB proxy ────────────────────────────────────────────────────────
+
+  // Schema capture: runs user's onupgradeneeded with a fake db to record ops
+  function CapDB(ov,nv){this.oldVersion=ov;this.version=nv;this._ops=[];this._stores={};}
+  CapDB.prototype.createObjectStore=function(n,o){var s=new CapOS(n,this);this._ops.push({op:'cos',name:n,opts:o||{}});this._stores[n]=s;return s;};
+  CapDB.prototype.deleteObjectStore=function(n){this._ops.push({op:'dos',name:n});delete this._stores[n];};
+  Object.defineProperty(CapDB.prototype,'objectStoreNames',{get:function(){var self=this;return{contains:function(n){return!!self._stores[n];},length:Object.keys(self._stores).length};}});
+  function CapOS(n,db){this.name=n;this._db=db;}
+  CapOS.prototype.createIndex=function(n,kp,o){this._db._ops.push({op:'ci',store:this.name,name:n,kp:kp,opts:o||{}});return{name:n};};
+  CapOS.prototype.deleteIndex=function(n){this._db._ops.push({op:'di',store:this.name,name:n});};
+
+  // IDBRequest-like wrapper with addEventListener support
+  function Req(p){
+    mkEvt(this);var self=this;
+    self.readyState='pending';self.result=undefined;self.error=null;self.onsuccess=null;self.onerror=null;
+    p.then(function(v){self.readyState='done';self.result=v;fire(self,'success',{target:self,result:v});},
+           function(e){self.readyState='done';self.error=e;fire(self,'error',{target:self,error:e});});
+  }
+
+  // ProxyTx: tracks pending ops so done/oncomplete fire only after all ops finish
+  function ProxyTx(db,m){
+    mkEvt(this);var self=this;
+    self._db=db;self._m=m||'readonly';self._pend=0;self._settled=false;
+    self.oncomplete=null;self.onerror=null;self.onabort=null;
+    self.done=new Promise(function(res,rej){self._res=res;self._rej=rej;});
+    self._tryDone=function(){if(!self._settled&&self._pend===0){self._settled=true;self._res();fire(self,'complete',{target:self});}};
+    // auto-complete if no ops were added this turn
+    setTimeout(self._tryDone,0);
+  }
+  ProxyTx.prototype.objectStore=function(n){return new ProxyOS(this._db,n,this._m,this);};
+  ProxyTx.prototype.commit=function(){this._tryDone();};
+  ProxyTx.prototype.abort=function(){if(this._settled)return;this._settled=true;this._rej(new DOMException('AbortError','AbortError'));fire(this,'abort',{target:this});};
+
+  // ProxyOS: each op increments tx pending count, decrements on completion
+  function ProxyOS(db,n,m,tx){this._db=db;this._n=n;this._m=m||'readwrite';this._tx=tx||null;}
+  ProxyOS.prototype._op=function(m,extra){
+    var p=scall(m,[this._db,this._n,this._m].concat(extra||[]));
+    var tx=this._tx;
+    if(tx){tx._pend++;p.then(function(){tx._pend--;tx._tryDone();},function(){tx._pend--;});}
+    return new Req(p);
+  };
+  ProxyOS.prototype.put=function(v,k){return this._op('os_put',[v,k===undefined?null:k]);};
+  ProxyOS.prototype.add=function(v,k){return this._op('os_add',[v,k===undefined?null:k]);};
+  ProxyOS.prototype.get=function(k){return this._op('os_get',[k]);};
+  ProxyOS.prototype.getAll=function(q,n){return this._op('os_getAll',[q==null?null:q,n==null?null:n]);};
+  ProxyOS.prototype.getAllKeys=function(q,n){return this._op('os_getAllKeys',[q==null?null:q,n==null?null:n]);};
+  ProxyOS.prototype['delete']=function(k){return this._op('os_delete',[k]);};
+  ProxyOS.prototype.clear=function(){return this._op('os_clear',[]);};
+  ProxyOS.prototype.count=function(q){return this._op('os_count',[q==null?null:q]);};
+  ProxyOS.prototype.index=function(n){return new ProxyIdx(this._db,this._n,n,this._m,this._tx);};
+
+  function ProxyIdx(db,st,ix,m,tx){this._db=db;this._st=st;this._ix=ix;this._m=m;this._tx=tx||null;}
+  ProxyIdx.prototype._op=function(m,extra){
+    var p=scall(m,[this._db,this._st,this._ix,this._m].concat(extra||[]));
+    var tx=this._tx;
+    if(tx){tx._pend++;p.then(function(){tx._pend--;tx._tryDone();},function(){tx._pend--;});}
+    return new Req(p);
+  };
+  ProxyIdx.prototype.get=function(k){return this._op('idx_get',[k]);};
+  ProxyIdx.prototype.getAll=function(q,n){return this._op('idx_getAll',[q==null?null:q,n==null?null:n]);};
+  ProxyIdx.prototype.getAllKeys=function(q,n){return this._op('idx_getAllKeys',[q==null?null:q,n==null?null:n]);};
+  ProxyIdx.prototype.count=function(q){return this._op('idx_count',[q==null?null:q]);};
+
+  // ProxyDB
+  function ProxyDB(id){this._id=id;}
+  ProxyDB.prototype.transaction=function(stores,mode){return new ProxyTx(this._id,mode||'readonly');};
+  ProxyDB.prototype.close=function(){scall('db_close',[this._id]);};
+  Object.defineProperty(ProxyDB.prototype,'objectStoreNames',{get:function(){return{contains:function(){return true;},length:1};}});
+
+  // indexedDB factory
+  var _fIDB={
+    open:function(name,version){
+      var req=mkEvt({readyState:'pending',result:null,error:null,onsuccess:null,onerror:null,onupgradeneeded:null,onblocked:null});
+      // Defer so caller can set onsuccess/onupgradeneeded handlers synchronously
+      setTimeout(function(){
+        var ops=[],ov=0,nv=version||1;
+        // Gather upgrade handlers (both on* and addEventListener style)
+        var upHandlers=(req._h['upgradeneeded']||[]).concat(typeof req.onupgradeneeded==='function'?[req.onupgradeneeded]:[]);
+        if(upHandlers.length){
+          var cap=new CapDB(ov,nv);
+          var fakeTx={objectStore:function(n){return cap._stores[n]||cap;}};
+          var upEv={target:{result:cap,transaction:fakeTx},oldVersion:ov,newVersion:nv};
+          upHandlers.forEach(function(h){try{h(upEv);}catch(e){}});
+          ops=cap._ops;
+        }
+        scall('db_open',[name,nv,ops]).then(function(id){
+          var db=new ProxyDB(id);req.readyState='done';req.result=db;
+          fire(req,'success',{target:req,result:db});
+        },function(e){req.readyState='done';req.error=e;fire(req,'error',{target:req,error:e});});
+      },0);
+      return req;
+    },
+    deleteDatabase:function(name){return new Req(scall('db_delete',[name]));},
+    cmp:function(a,b){return a<b?-1:a>b?1:0;}
+  };
+  try{Object.defineProperty(window,'indexedDB',{get:function(){return _fIDB;},configurable:true});}catch(e){window.indexedDB=_fIDB;}
+})();
+</script>
+
+  <meta charset="utf-8">
+  <meta name="fs-deck-generator" content="render-deck">
+  <meta name="fs-deck-hash" content="afb48e40058c">
+  <meta name="fs-render-sig" content="bc2f3ae2978fdb34">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="fs-language" content="zh-only">
+  <title>广州CEO研修班AI分享 · 飞书</title>
+  <link rel="stylesheet" href="feishu-deck-h5/publisher/index-20260805235925/css/4d0ddf961ae55d94.css">
+  <!-- In-browser edit mode (press E to toggle). Optional but ships by
+       default so every rendered deck can be edited in the browser. -->
+  <link rel="stylesheet" href="feishu-deck-h5/publisher/index-20260805235925/css/34e6e0ecc89eead7.css">
+  <!-- Phase 1.c — extra layouts (matrix-2x2, waterfall, issue-tree, replica)
+       not yet in framework feishu-deck.css. Lives next to the renderer. -->
+  <link rel="stylesheet" href="feishu-deck-h5/publisher/index-20260805235925/css/2c688f8def0a8572.css">
+
+  <link rel="stylesheet" href="feishu-deck-h5/publisher/index-20260805235925/css/2fd783f2ed820fad.css">
+
+<style>
+  html, body { margin: 0; width: 1920px; height: 1080px; background: #000; overflow: hidden; }
+  .material-control-stage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #000;
+    --fs-scale: 1;
+  }
+  .material-control-stage > .deck[data-material-control-deck] {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+  .material-control-stage > .deck[data-material-control-deck] .slide-frame {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    aspect-ratio: auto !important;
+  }
+  .material-control-stage .slide-frame:first-child,
+  .material-control-stage .slide-frame.is-current {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    content-visibility: visible !important;
+  }
+  .material-control-stage > .deck[data-material-control-deck] .slide-frame .slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    width: 1920px !important;
+    height: 1080px !important;
+    transform: none !important;
+    transform-origin: top left !important;
+  }
+  /* Decks that use fs-reveal start direct slide children at opacity: 0.
+     Restore their visible state for standalone pages while allowing nested
+     source animations to run normally in the real report viewer. */
+  .material-control-stage .slide-frame.is-current .slide > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+</style>
+</head>
+<body>
+  <main class="material-control-stage" data-material-control="true">
+    <div class="deck" data-mode="present" data-material-control-deck="true" aria-label="two ai capabilities">
+<div class="slide-frame is-current">
+      <div class="slide" data-layout="raw"  data-screen-label="03 two-ai-capabilities (TODO)" data-slide-key="two-ai-capabilities">
+        <link rel="stylesheet" href="feishu-deck-h5/publisher/index-20260805235925/css/c059078a07baf1a7.css">
+        <div class="wordmark">飞书</div>
+<div class="header">
+<h2 class="title-zh">企业 AI 的三种配置，彼此互补</h2>
+<p class="page-sub"><span class="sub-avatar">管理者数字分身</span>辅助决策，<span class="sub-assistant">全员创新助理</span>激活创造，<span class="sub-worker">关键岗位数字员工</span>负责交付。</p>
+</div>
+<div class="cap-stage">
+<section class="cap-thesis">
+<span>核心判断</span>
+<b>AI 不是多买几个工具，而是把管理者判断、全员创新和关键岗位交付沉淀成企业能力。</b>
+</section>
+<section class="cap-focus-grid">
+<article class="cap-focus-card is-avatar">
+<div class="cap-num">01</div>
+<h3>管理者的数字分身</h3>
+<p>沉淀 CEO / 高管的偏好、上下文与判断方式，形成可调用的决策能力。</p>
+<div class="focus-line">
+<span>建设重点</span>
+<strong>懂你、会推演、助决策</strong>
+</div>
+</article>
+<article class="cap-focus-card is-assistant">
+<div class="cap-num">02</div>
+<h3>每位员工的创新助理</h3>
+<p>让每位员工在真实任务中调用 AI 与企业能力，把想法快速转化为分析、协作与业务应用。</p>
+<div class="focus-line">
+<span>建设重点</span>
+<strong>懂业务、会创造、能落地</strong>
+</div>
+</article>
+<article class="cap-focus-card is-worker">
+<div class="cap-num">03</div>
+<h3>关键岗位的数字员工</h3>
+<p>沉淀业务流程、专家方法与团队协同，形成可持续交付的 Agent 能力。</p>
+<div class="focus-line">
+<span>建设重点</span>
+<strong>懂流程、会方法、能交付</strong>
+</div>
+</article>
+</section>
+</div>
+
+      </div>
+    </div>
+    </div>
+  </main>
+<script src="feishu-deck-h5/publisher/index-20260805235925/js/226aa29e2b67bbdf.js"></script>
+<script type="application/json" id="fs-deck-notes">{"office-software-role-shift": "过去十年，用户从顶层发起操作，直接进入聊天、文档、会议与审批等功能。AI 时代，用户仍然在最上层发起任务，但只需要说出目标；命令先进入 Agent，由 AI 理解、规划并调用文档、表格、会议、群聊与流程。发生变化的不是任务发起者，而是软件的调用方式：从人亲自操作，扩展为人定义目标、AI 负责调用执行。飞书因此从人使用的办公套件，进一步成为人与 AI 共同调用的企业能力层。"}</script>
+<script data-source="framework" data-inlined-from="../../../../../../.codex/skills/feishu-deck-h5/assets/feishu-deck.js" src="feishu-deck-h5/publisher/index-20260805235925/js/913d7f7f2b36d059.js"></script>
+<script data-source="framework" data-inlined-from="../../../../../../.codex/skills/feishu-deck-h5/assets/edit-mode/deck-edit-mode.js" src="feishu-deck-h5/publisher/index-20260805235925/js/5175928189631c9f.js"></script>
+</body>
+</html>

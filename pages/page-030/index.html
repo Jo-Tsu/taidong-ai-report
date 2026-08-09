@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>先进团队 先用飞书</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 1920px;
+      height: 1080px;
+      margin: 0;
+      overflow: hidden;
+      background: #050712;
+    }
+
+    .stage {
+      width: 1920px;
+      height: 1080px;
+      background: #050712 url("assets/ending-feishu-ai.jpg") center / cover no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <main class="stage" aria-label="结尾：先进团队 先用飞书，飞书 AI 真能用 真落地"></main>
+</body>
+</html>

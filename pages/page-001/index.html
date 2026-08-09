@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="minem-page" content="single-slide">
+  <title>AI时代新的工作方式</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: "方正兰亭黑 Pro GB18030", "FZLanTingHeiPro-Light", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #000; }
+    body { display: grid; place-items: center; }
+    .canvas {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: #fff;
+      background: #000 url("assets/cover-bg.jpg") center / cover no-repeat;
+      transform-origin: center;
+    }
+    .canvas::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, rgba(0,0,0,.12), transparent 55%);
+    }
+    .brand-row {
+      position: absolute;
+      z-index: 1;
+      left: 124px;
+      top: 500px;
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      height: 82px;
+    }
+    .lark-brand {
+      width: 235px;
+      height: 74px;
+      object-fit: contain;
+      object-position: left center;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 50px;
+      background: rgba(255,255,255,.32);
+    }
+    .doubao-brand {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: #fff;
+      font-size: 43px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: .01em;
+    }
+    .doubao-avatar {
+      width: 72px;
+      height: 72px;
+      overflow: hidden;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 1px rgba(255,255,255,.32);
+    }
+    .doubao-avatar img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    h1 {
+      position: absolute;
+      z-index: 1;
+      left: 124px;
+      top: 310px;
+      width: 1100px;
+      margin: 0;
+      color: #fff;
+      font-size: 92px;
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -.005em;
+    }
+    .author {
+      position: absolute;
+      z-index: 1;
+      left: 124px;
+      top: 720px;
+      color: rgba(255,255,255,.85);
+      font-size: 30px;
+      font-weight: 600;
+      line-height: 1.45;
+      letter-spacing: .02em;
+    }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="AI时代新的工作方式">
+    <h1>AI时代新的工作方式</h1>
+    <div class="brand-row" aria-label="飞书与企业豆包">
+      <img class="lark-brand" src="assets/lark-logo.png" alt="飞书">
+      <span class="brand-divider" aria-hidden="true"></span>
+      <div class="doubao-brand">
+        <span class="doubao-avatar"><img src="assets/enterprise-doubao-avatar.png" alt=""></span>
+        <span>企业豆包</span>
+      </div>
+    </div>
+    <div class="author">飞书大湾区团队</div>
+  </main>
+  <script>
+    const canvas = document.querySelector('.canvas');
+    function fit() {
+      const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
+      canvas.style.transform = `scale(${scale})`;
+    }
+    addEventListener('resize', fit, { passive: true });
+    fit();
+  </script>
+</body>
+</html>

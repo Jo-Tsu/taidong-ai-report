@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>钛动科技</title>
+  <style>
+    :root { color-scheme: dark; font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; overflow: hidden; background: #02050c; color: #fff; }
+    .viewer { position: relative; width: 100vw; height: 100vh; display: grid; place-items: center; }
+    .slide-viewport { position: relative; width: calc(1920px * var(--deck-scale, 1)); height: calc(1080px * var(--deck-scale, 1)); }
+    .slide-shell { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; overflow: hidden; background: #030712; transform: scale(var(--deck-scale, 1)); transform-origin: left top; }
+    iframe { position: absolute; inset: 0; width: 1920px; height: 1080px; border: 0; background: #030712; }
+    .page-pill { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); display: inline-flex; gap: 12px; align-items: center; border: 1px solid rgba(153,180,209,.34); border-radius: 999px; padding: 10px 18px; background: rgba(2,5,12,.62); font-size: 14px; }
+    .page-pill[hidden] { display: none; }
+    .nav-btn { width: 30px; height: 30px; border: 1px solid rgba(153,180,209,.34); border-radius: 999px; color: #fff; background: rgba(255,255,255,.08); cursor: pointer; }
+    .nav-btn:disabled { opacity: .35; cursor: default; }
+    .page-tools { position: fixed; top: 24px; right: 24px; display: inline-flex; gap: 8px; padding: 6px; border: 1px solid rgba(153,180,209,.34); border-radius: 10px; background: rgba(2,5,12,.72); }
+    .tool-btn { width: 36px; height: 36px; border: 0; border-radius: 7px; color: #fff; background: transparent; font-size: 19px; line-height: 1; cursor: pointer; }
+    .tool-btn:hover { background: rgba(255,255,255,.12); }
+    .tool-btn svg { display: block; width: 20px; height: 20px; margin: auto; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .toc-page { color: #8cecff; }
+    .toc-page[hidden] { display: none; }
+    .copy-page, .copy-source { position: relative; font-size: 0; }
+    .copy-page::before, .copy-page::after { content: ""; position: absolute; width: 11px; height: 12px; border: 1.5px solid currentColor; border-radius: 2px; }
+    .copy-page::before { left: 10px; top: 9px; opacity: .72; }
+    .copy-page::after { left: 14px; top: 13px; background: #02050c; }
+    .copy-source::before { content: "↗"; position: absolute; inset: 0; display: grid; place-items: center; font-size: 21px; font-weight: 800; }
+    .copy-source[hidden] { display: none; }
+    .copy-tip { position: fixed; top: 78px; right: 24px; z-index: 4; padding: 8px 12px; border: 1px solid rgba(114,213,255,.55); border-radius: 8px; background: rgba(12,38,65,.96); color: #b8ebff; font-size: 13px; font-weight: 800; opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity .16s ease,transform .16s ease; }
+    .copy-tip.is-visible { opacity: 1; transform: translateY(0); }
+	    .page-state { position: absolute; z-index: 3; inset: 0; display: grid; place-items: center; align-content: center; gap: 12px; padding: 32px; color: #b8c8d8; background: radial-gradient(circle at 50% 34%, rgba(57,112,165,.18), transparent 48%), #030712; text-align: center; }
+	    .page-state[hidden] { display: none; }
+	    .page-state strong { color: #fff; font-size: 18px; }
+	    .page-state span { max-width: 480px; font-size: 13px; line-height: 1.6; }
+	    .page-state button { min-height: 36px; border: 1px solid rgba(153,180,209,.38); border-radius: 8px; padding: 0 14px; color: #fff; background: rgba(255,255,255,.08); cursor: pointer; }
+	    .page-state.is-loading::before { width: 24px; height: 24px; border: 2px solid rgba(184,207,229,.28); border-top-color: #8cecff; border-radius: 50%; content: ""; animation: page-spin .8s linear infinite; }
+	    @keyframes page-spin { to { transform: rotate(360deg); } }
+    html[data-embed="1"] .page-tools { display: none; }
+    @media (max-width: 720px) { .page-tools { top: 12px; right: 12px; } .page-pill { bottom: 12px; } }
+  </style>
+</head>
+	<body>
+	  <script id="minem-arrangement-state" type="application/json">{}</script>
+	  <main class="viewer" aria-label="钛动科技">
+	    <div class="slide-viewport"><section class="slide-shell"><iframe class="deck-frame" title="Page 01" src="" sandbox="allow-scripts allow-forms allow-modals allow-popups allow-downloads"></iframe><div class="page-state is-loading" role="status"><strong>正在加载页面</strong><span>页面素材正在准备，请稍候。</span><button class="retry-page" type="button" hidden>重新加载</button></div></section></div>
+    <div class="page-tools" aria-label="页面工具"><button class="tool-btn toc-page" type="button" title="返回目录" aria-label="返回目录" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"></path></svg></button><button class="tool-btn copy-page" type="button" title="复制当前页链接" aria-label="复制当前页链接"></button><button class="tool-btn copy-source" type="button" title="复制原始飞书文档链接" aria-label="复制原始飞书文档链接" hidden></button><button class="tool-btn refresh-page" type="button" title="刷新当前页" aria-label="刷新当前页">↻</button><button class="tool-btn fullscreen-page" type="button" title="全屏" aria-label="全屏">⛶</button></div>
+    <div class="copy-tip" role="status">复制成功</div>
+    <div class="page-pill"><button class="nav-btn prev" type="button" aria-label="上一页">‹</button><span class="page-count">1 / 1</span><span>·</span><span class="page-title">Page 01</span><button class="nav-btn next" type="button" aria-label="下一页">›</button></div>
+  </main>
+  <script>
+	    const pages = [
+      {
+            "id": "AI时代新的工作方式",
+            "label": "Page 01",
+            "title": "AI时代新的工作方式",
+            "code": "CTRL-PAGE-320",
+            "src": "pages/page-001/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "cover"
+      },
+      {
+            "id": "02-ai-revolution-opening",
+            "label": "Page 02",
+            "title": "02 ai revolution opening",
+            "code": "CTRL-20260808-001-002",
+            "src": "pages/page-002/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "06-AI拥有了-手和脚-从回答问题走向完成工作",
+            "label": "Page 03",
+            "title": "06 AI拥有了“手和脚”，从回答问题走向完成工作",
+            "code": "CTRL-XSD-20260701-001-006",
+            "src": "pages/page-003/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "c84f086bfb-index",
+            "label": "Page 04",
+            "title": "c84f086bfb index",
+            "code": "CTRL-PAGE-014",
+            "src": "pages/page-004/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "03-two-ai-capabilities",
+            "label": "Page 05",
+            "title": "03 two ai capabilities",
+            "code": "CTRL-20260808-001-003",
+            "src": "pages/page-005/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "04-ai-manager-clone",
+            "label": "Page 06",
+            "title": "04 ai manager clone",
+            "code": "CTRL-20260808-001-004",
+            "src": "pages/page-006/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "飞书上的智能伙伴",
+            "label": "Page 07",
+            "title": "飞书上的智能伙伴",
+            "code": "CTRL-20260805-HUIDING-004",
+            "src": "pages/page-007/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "05-reuse-active-chat",
+            "label": "Page 08",
+            "title": "05 reuse active chat",
+            "code": "CTRL-20260808-001-005",
+            "src": "pages/page-008/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "AI入会",
+            "label": "Page 09",
+            "title": "AI入会",
+            "code": "CTRL-PAGE-207",
+            "src": "pages/page-009/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "08-kangshifu-ai-reading-assistant",
+            "label": "Page 10",
+            "title": "08 kangshifu ai reading assistant",
+            "code": "CTRL-20260808-001-008",
+            "src": "pages/page-010/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "09-reuse-mail-assistant",
+            "label": "Page 11",
+            "title": "09 reuse mail assistant",
+            "code": "CTRL-20260808-001-009",
+            "src": "pages/page-011/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "10-Insta360-经销商邮件-AI-管理",
+            "label": "Page 12",
+            "title": "10 Insta360 经销商邮件 AI 管理",
+            "code": "CTRL-20260808-001-010",
+            "src": "pages/page-012/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "11-management-clone-fly",
+            "label": "Page 13",
+            "title": "11 management clone fly",
+            "code": "CTRL-20260808-001-011",
+            "src": "pages/page-013/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "12-employee-innovation-assistant-divider",
+            "label": "Page 14",
+            "title": "12 employee innovation assistant divider",
+            "code": "CTRL-20260808-001-012",
+            "src": "pages/page-014/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "13-多维表格-工程思维训练场",
+            "label": "Page 15",
+            "title": "13 多维表格：工程思维训练场",
+            "code": "CTRL-20260808-001-013",
+            "src": "pages/page-015/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "14-用户原声-多维表格承接-VOC-闭环",
+            "label": "Page 16",
+            "title": "14 用户原声：多维表格承接 VOC 闭环",
+            "code": "CTRL-20260808-001-014",
+            "src": "pages/page-016/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "多维表格打通跨团队协同-课后服务让家长学生更满意",
+            "label": "Page 17",
+            "title": "多维表格打通跨团队协同，课后服务让家长学生更满意",
+            "code": "CTRL-PAGE-358",
+            "src": "pages/page-017/import-20260809-003842-eaf310a7.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "16-视频制作-多维表格串起制作流程",
+            "label": "Page 18",
+            "title": "16 视频制作：多维表格串起制作流程",
+            "code": "CTRL-20260808-001-016",
+            "src": "pages/page-018/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "17-AI正在重新定义软件",
+            "label": "Page 19",
+            "title": "17 AI正在重新定义软件",
+            "code": "CTRL-20260808-001-017",
+            "src": "pages/page-019/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "18-doubao-demo-finance-budget-品牌看板视频",
+            "label": "Page 20",
+            "title": "18 doubao demo finance budget｜品牌看板视频",
+            "code": "CTRL-PAGE-440",
+            "src": "pages/page-020/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "19-doubao-demo-table-to-system",
+            "label": "Page 21",
+            "title": "19 doubao demo table to system",
+            "code": "CTRL-20260808-001-019",
+            "src": "pages/page-021/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "几张表格-变成团队的业务系统-点击播放视频",
+            "label": "Page 22",
+            "title": "几张表格，变成团队的业务系统（点击播放视频）",
+            "code": "CTRL-PAGE-439",
+            "src": "pages/page-022/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "21-enterprise-digital-employees",
+            "label": "Page 23",
+            "title": "21 enterprise digital employees",
+            "code": "CTRL-20260808-001-021",
+            "src": "pages/page-023/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "22-ai-digital-employees-on-duty",
+            "label": "Page 24",
+            "title": "22 ai digital employees on duty",
+            "code": "CTRL-20260808-001-022",
+            "src": "pages/page-024/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "零一数科-AI-CRM-从对话采集到经营决策的完整闭环",
+            "label": "Page 25",
+            "title": "零一数科｜AI-CRM 从对话采集到经营决策的完整闭环",
+            "code": "CTRL-PAGE-355",
+            "src": "pages/page-025/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "神州数码-把培训运营从人工追进度变成一键执行与一图全览",
+            "label": "Page 26",
+            "title": "神州数码｜把培训运营从人工追进度变成一键执行与一图全览",
+            "code": "CTRL-PAGE-424",
+            "src": "pages/page-026/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "客诉AI自动排单",
+            "label": "Page 27",
+            "title": "客诉AI自动排单",
+            "code": "CTRL-PAGE-444",
+            "src": "pages/page-027/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "领星-AI服务台解决1100-员工咨询问题-人效提升400",
+            "label": "Page 28",
+            "title": "领星：AI服务台解决1100+员工咨询问题，人效提升400%",
+            "code": "CTRL-PAGE-441",
+            "src": "pages/page-028/import-20260809-110805-9753d22b.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "35-不要为了AI而AI-要为了经营而AI",
+            "label": "Page 29",
+            "title": "35 不要为了AI而AI，要为了经营而AI",
+            "code": "CTRL-XSD-20260701-001-035",
+            "src": "pages/page-029/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      },
+      {
+            "id": "36-先进团队-先用飞书",
+            "label": "Page 30",
+            "title": "36 先进团队 先用飞书",
+            "code": "CTRL-XSD-20260701-001-036",
+            "src": "pages/page-030/index.html",
+            "sourceDoc": "",
+            "isDirectory": false,
+            "role": "content"
+      }
+];
+	    const embedded = new URLSearchParams(window.location.search).get("embed") === "1";
+	    if (embedded) document.documentElement.dataset.embed = "1";
+	    if (pages.length <= 1) document.querySelector(".page-pill").hidden = true;
+	    const releaseUrl = "";
+	    const heartbeatUrl = releaseUrl ? releaseUrl.replace(new RegExp("/release$"), "/heartbeat") : "";
+	    let currentIndex = 0;
+	    let released = false;
+	    let heartbeatTimer = 0;
+	    const frame = document.querySelector(".deck-frame");
+    const pageCount = document.querySelector(".page-count");
+    const pageTitle = document.querySelector(".page-title");
+    const prevButton = document.querySelector(".prev");
+    const nextButton = document.querySelector(".next");
+    const tocButton = document.querySelector(".toc-page");
+    const copyButton = document.querySelector(".copy-page");
+    const copySourceButton = document.querySelector(".copy-source");
+    const copyTip = document.querySelector(".copy-tip");
+	    const pageState = document.querySelector(".page-state");
+	    const pageStateTitle = pageState.querySelector("strong");
+	    const pageStateMessage = pageState.querySelector("span");
+	    const retryPageButton = document.querySelector(".retry-page");
+	    let pageLoadTimer = 0;
+	    let pageLoadSequence = 0;
+    let copyTipTimer = 0;
+    function flashCopyTip() {
+      copyTip.classList.add("is-visible");
+      if (copyTipTimer) window.clearTimeout(copyTipTimer);
+      copyTipTimer = window.setTimeout(() => copyTip.classList.remove("is-visible"), 1000);
+    }
+    const refreshButton = document.querySelector(".refresh-page");
+    const fullscreenButton = document.querySelector(".fullscreen-page");
+    const directoryPage = pages.find(page => page.isDirectory) || null;
+    function updateDeckScale() {
+      const scale = Math.min((window.innerWidth - 96) / 1920, (window.innerHeight - 72) / 1080, 1);
+      document.documentElement.style.setProperty("--deck-scale", String(scale));
+    }
+    function resolvePageIndex(target) {
+      if (target == null || target === "") return 0;
+      if (/^\d+$/.test(String(target))) return Math.max(0, Math.min(Number(target), pages.length - 1));
+      const normalized = decodeURIComponent(String(target)).replace(/^page=/, "");
+      const index = pages.findIndex(page => page.id === normalized || page.code === normalized || page.src === normalized || page.title === normalized);
+      return index >= 0 ? index : 0;
+    }
+    function locationPageTarget() {
+      const queryTarget = new URLSearchParams(window.location.search).get("page");
+      const hashValue = window.location.hash.replace(/^#/, "");
+      const hashTarget = new URLSearchParams(hashValue).get("page") || hashValue;
+      return queryTarget || hashTarget || "";
+    }
+    function syncPageUrl(page) {
+      if (!page || !window.history?.replaceState) return;
+      const url = new URL(window.location.href);
+      url.hash = `page=${encodeURIComponent(page.code || page.id)}`;
+      window.history.replaceState(null, "", url);
+    }
+	    function setPageState(state, title = "", message = "") {
+	      pageState.classList.toggle("is-loading", state === "loading");
+	      pageState.hidden = state === "ready";
+	      pageStateTitle.textContent = title;
+	      pageStateMessage.textContent = message;
+	      retryPageButton.hidden = state !== "error";
+	    }
+    function showPage(index, options = {}) {
+      currentIndex = Math.max(0, Math.min(index, pages.length - 1));
+      const page = pages[currentIndex] || pages[0];
+	      pageLoadSequence += 1;
+	      const currentSequence = pageLoadSequence;
+	      if (pageLoadTimer) window.clearTimeout(pageLoadTimer);
+	      setPageState("loading", "正在加载页面", `${page.label} · ${page.title}`);
+	      if (page.src) {
+	        frame.src = `${page.src}${page.src.includes("?") ? "&" : "?"}embed=1&v=${Date.now()}`;
+	        pageLoadTimer = window.setTimeout(() => {
+	          if (currentSequence !== pageLoadSequence) return;
+	          setPageState("error", "页面加载时间过长", "可以重新加载当前页，或检查素材来源文件是否仍然可用。");
+	        }, 20000);
+	      } else {
+	        frame.removeAttribute("src");
+	        setPageState("error", "页面素材不可用", "当前页面没有可访问的来源文件。");
+	      }
+      frame.title = `${page.label} - ${page.title}`;
+      pageCount.textContent = `${currentIndex + 1} / ${pages.length}`;
+      pageTitle.textContent = page.label;
+      prevButton.disabled = currentIndex === 0;
+      nextButton.disabled = currentIndex >= pages.length - 1;
+      copySourceButton.hidden = !page.sourceDoc;
+      tocButton.hidden = !directoryPage || page === directoryPage;
+      if (options.syncUrl !== false) syncPageUrl(page);
+    }
+	    frame.addEventListener("load", () => {
+	      if (pageLoadTimer) window.clearTimeout(pageLoadTimer);
+	      try {
+	        const documentTitle = frame.contentDocument?.title || "";
+	        if (
+	          frame.contentDocument?.querySelector("[data-minem-preview-error]")
+	          || documentTitle === "Error response"
+	          || /^(?:404(?:\s+Not Found)?|410(?:\s+Gone)?)$/i.test(documentTitle.trim())
+	        ) {
+	          setPageState("error", "页面来源文件不可用", "页面记录仍然保留，但当前来源文件无法访问。请检查原数据链路或重新导入。");
+	          return;
+	        }
+	      } catch (_) {
+	        // Cross-origin pages cannot be inspected; the successful load event
+	        // remains the best available signal for those sources.
+	      }
+	      setPageState("ready");
+	    });
+	    frame.addEventListener("error", () => {
+	      if (pageLoadTimer) window.clearTimeout(pageLoadTimer);
+	      setPageState("error", "页面预览加载失败", "素材仍然保留，可以重新加载当前页。");
+	    });
+	    retryPageButton.addEventListener("click", () => showPage(currentIndex));
+    updateDeckScale();
+    showPage(resolvePageIndex(locationPageTarget()));
+    window.addEventListener("resize", updateDeckScale);
+	    prevButton.addEventListener("click", () => showPage(currentIndex - 1));
+	    nextButton.addEventListener("click", () => showPage(currentIndex + 1));
+	    tocButton.addEventListener("click", () => {
+	      if (directoryPage) showPage(pages.indexOf(directoryPage));
+	    });
+	    window.addEventListener("message", event => {
+	      if (event.source !== frame.contentWindow) return;
+	      if (event.data?.type !== "report:navigate") return;
+	      showPage(resolvePageIndex(event.data.target));
+	    });
+	    window.addEventListener("hashchange", () => showPage(resolvePageIndex(locationPageTarget()), { syncUrl: false }));
+	    copyButton.addEventListener("click", async () => {
+	      const page = pages[currentIndex] || pages[0];
+	      if (!page) return;
+	      const url = new URL(window.location.href);
+	      url.hash = `page=${encodeURIComponent(page.code || page.id)}`;
+	      try {
+	        await navigator.clipboard.writeText(url.toString());
+	        copyButton.setAttribute("data-copied", "true");
+	        flashCopyTip();
+	        window.setTimeout(() => { copyButton.removeAttribute("data-copied"); }, 1000);
+	      } catch (_) {
+	        window.prompt("复制当前页链接", url.toString());
+	      }
+	    });
+	    copySourceButton.addEventListener("click", async () => {
+	      const page = pages[currentIndex] || pages[0];
+	      if (!page || !page.sourceDoc) return;
+	      try {
+	        await navigator.clipboard.writeText(page.sourceDoc);
+	        copySourceButton.setAttribute("data-copied", "true");
+	        flashCopyTip();
+	        window.setTimeout(() => { copySourceButton.removeAttribute("data-copied"); }, 1000);
+	      } catch (_) {
+	        window.prompt("复制原始飞书文档链接", page.sourceDoc);
+	      }
+	    });
+	    refreshButton.addEventListener("click", () => showPage(currentIndex));
+	    fullscreenButton.addEventListener("click", async () => {
+	      try {
+	        if (document.fullscreenElement) {
+	          await document.exitFullscreen();
+	        } else {
+	          await document.documentElement.requestFullscreen();
+	        }
+	      } catch (_) {
+	        // The browser can deny fullscreen until a direct user gesture.
+	      }
+	    });
+	    document.addEventListener("fullscreenchange", () => {
+	      const active = Boolean(document.fullscreenElement);
+	      fullscreenButton.setAttribute("aria-label", active ? "退出全屏" : "全屏");
+	      fullscreenButton.setAttribute("title", active ? "退出全屏" : "全屏");
+	      fullscreenButton.textContent = active ? "⛶" : "⛶";
+	    });
+	    function releaseTempReport() {
+	      if (!releaseUrl || released) return;
+	      released = true;
+	      if (heartbeatTimer) window.clearInterval(heartbeatTimer);
+	      const payload = new Blob(["{}"], { type: "application/json" });
+	      if (navigator.sendBeacon) {
+	        navigator.sendBeacon(releaseUrl, payload);
+	        return;
+	      }
+	      fetch(releaseUrl, { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}", keepalive: true }).catch(() => {});
+	    }
+	    function heartbeatTempReport() {
+	      if (!heartbeatUrl || released) return;
+	      fetch(heartbeatUrl, { method: "POST", keepalive: true }).catch(() => {});
+	    }
+	    heartbeatTempReport();
+	    if (heartbeatUrl) heartbeatTimer = window.setInterval(heartbeatTempReport, 5000);
+	    window.addEventListener("pagehide", releaseTempReport);
+	    window.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") showPage(currentIndex - 1);
+      if (event.key === "ArrowRight") showPage(currentIndex + 1);
+    });
+  </script>
+</body>
+	</html>
+	

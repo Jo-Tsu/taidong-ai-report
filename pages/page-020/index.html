@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="minem-page" content="single-slide">
+  <title>18 doubao demo finance budget｜品牌看板视频</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #030712; }
+    body { display: grid; place-items: center; }
+    .canvas { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #030712 url("assets/page-background.png") center / cover no-repeat; transform-origin: center; }
+    .mask-top { position: absolute; right: 0; top: 0; width: 220px; height: 82px; background: #050914; }
+    .mask-bottom { position: absolute; left: 800px; bottom: 0; width: 320px; height: 64px; background: #030712; }
+    .video-shell {
+      position: absolute;
+      left: 729px;
+      top: 230px;
+      width: 1120px;
+      height: 792px;
+      overflow: hidden;
+      border: 2px solid rgba(128, 160, 255, .34);
+      border-radius: 18px;
+      background: #000;
+      box-shadow: 0 28px 70px rgba(0, 0, 0, .42);
+    }
+    video { display: block; width: 100%; height: 100%; object-fit: contain; background: #000; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main class="canvas" aria-label="品牌看板视频演示">
+    <span class="mask-top" aria-hidden="true"></span>
+    <span class="mask-bottom" aria-hidden="true"></span>
+    <section class="video-shell" aria-label="品牌看板演示视频">
+      <video src="assets/brand-dashboard.mp4" preload="metadata" controls playsinline aria-label="点击播放品牌看板视频"></video>
+    </section>
+  </main>
+  <script>
+    const canvas = document.querySelector('.canvas');
+    function fit() {
+      const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
+      canvas.style.transform = `scale(${scale})`;
+    }
+    addEventListener('resize', fit, { passive: true });
+    fit();
+  </script>
+</body>
+</html>

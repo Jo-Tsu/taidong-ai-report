@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>飞书上的智能伙伴</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      --ink: #f4f8ff;
+      --muted: rgba(223, 234, 255, .68);
+      --line: rgba(165, 196, 255, .18);
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #020611; }
+    body { display: grid; place-items: start; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% 52%, rgba(47, 125, 255, .20), transparent 27%),
+        radial-gradient(circle at 10% 5%, rgba(41, 102, 255, .18), transparent 31%),
+        radial-gradient(circle at 91% 88%, rgba(155, 82, 255, .14), transparent 30%),
+        linear-gradient(135deg, #07142e 0%, #030916 48%, #02050c 100%);
+      isolation: isolate;
+    }
+    .slide::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      opacity: .34;
+      background-image:
+        linear-gradient(rgba(121, 170, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(121, 170, 255, .08) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(circle at 50% 50%, #000 8%, transparent 78%);
+      z-index: -2;
+    }
+    .slide::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(65, 126, 255, .8), rgba(51, 214, 192, .8), rgba(159, 111, 241, .82)) top / 100% 4px no-repeat;
+      z-index: 20;
+      pointer-events: none;
+    }
+    .brand {
+      position: absolute;
+      right: 250px;
+      top: 58px;
+      z-index: 5;
+      width: 144px;
+    }
+    .brand img { display: block; width: 144px; height: auto; }
+    .eyebrow {
+      position: absolute;
+      left: 96px;
+      top: 60px;
+      color: #67d9ff;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    h1 {
+      position: absolute;
+      left: 94px;
+      top: 88px;
+      margin: 0;
+      font-size: 54px;
+      line-height: 1.2;
+      font-weight: 820;
+      letter-spacing: -.5px;
+    }
+    .lede {
+      position: absolute;
+      left: 98px;
+      top: 166px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 20px;
+      letter-spacing: .3px;
+    }
+    .stage {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1920px;
+      height: 1080px;
+    }
+    .connectors {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      overflow: visible;
+      pointer-events: none;
+    }
+    .branch-base { fill: none; stroke: rgba(123, 168, 255, .12); stroke-width: 10; }
+    .branch {
+      fill: none;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-dasharray: 12 10;
+      animation: branch-flow 8s linear infinite;
+    }
+    .node-dot { stroke-width: 3; fill: #071427; }
+    .cards { position: absolute; inset: 0; z-index: 3; }
+    .card {
+      position: absolute;
+      width: 548px;
+      min-height: 172px;
+      padding: 25px 28px 24px 118px;
+      border: 1px solid color-mix(in srgb, var(--accent) 58%, transparent);
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.105), rgba(255,255,255,.035)),
+        rgba(7, 16, 35, .60);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.12),
+        0 18px 48px rgba(0,0,0,.26),
+        0 0 28px color-mix(in srgb, var(--accent) 15%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .card::before {
+      position: absolute;
+      left: -1px;
+      top: 28px;
+      width: 3px;
+      height: 70px;
+      border-radius: 0 8px 8px 0;
+      background: var(--accent);
+      box-shadow: 0 0 18px var(--accent);
+      content: "";
+    }
+    .card-left { left: 96px; }
+    .card-right { right: 96px; }
+    .row-1 { top: 252px; }
+    .row-2 { top: 486px; }
+    .row-3 { top: 720px; }
+    .card-icon {
+      position: absolute;
+      left: 28px;
+      top: 42px;
+      width: 66px;
+      height: 66px;
+      display: grid;
+      place-items: center;
+      border: 1px solid color-mix(in srgb, var(--accent) 58%, transparent);
+      border-radius: 18px;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 11%, rgba(5,12,27,.86));
+      box-shadow: inset 0 0 22px color-mix(in srgb, var(--accent) 13%, transparent), 0 0 20px color-mix(in srgb, var(--accent) 13%, transparent);
+    }
+    .card-icon svg { width: 38px; height: 38px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 15px;
+      line-height: 1;
+      font-weight: 760;
+      letter-spacing: 1.4px;
+    }
+    .kicker::before { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); content: ""; }
+    .card h2 { margin: 0 0 12px; color: #fff; font-size: 27px; line-height: 1.2; font-weight: 780; letter-spacing: -.2px; }
+    .card p { margin: 0; color: rgba(229,237,255,.72); font-size: 18px; line-height: 1.55; font-weight: 480; }
+    .core {
+      position: absolute;
+      left: 742px;
+      top: 374px;
+      z-index: 5;
+      width: 436px;
+      height: 374px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .core::before,
+    .core::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+    .core::before {
+      width: 338px;
+      height: 338px;
+      border: 1px solid rgba(84, 213, 255, .32);
+      background: radial-gradient(circle, rgba(32, 131, 255, .18), rgba(7, 18, 43, .38) 48%, transparent 72%);
+      box-shadow: inset 0 0 70px rgba(61, 127, 255, .15), 0 0 72px rgba(66, 151, 255, .16);
+      animation: breathe 4.8s ease-in-out infinite;
+    }
+    .core::after {
+      width: 280px;
+      height: 280px;
+      border: 1px dashed rgba(145, 105, 255, .56);
+      animation: orbit 22s linear infinite;
+    }
+    .avatar-shell {
+      position: relative;
+      z-index: 2;
+      width: 148px;
+      height: 148px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(97, 224, 255, .68);
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255,255,255,.22), transparent 25%),
+        linear-gradient(145deg, rgba(47, 176, 255, .30), rgba(115, 76, 255, .24)),
+        #071225;
+      box-shadow: inset 0 0 38px rgba(70, 191, 255, .18), 0 0 42px rgba(53, 190, 255, .38);
+    }
+    .avatar-shell svg { width: 84px; height: 84px; fill: none; stroke: #d8f8ff; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+    .scanline {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 50%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #66e8ff, transparent);
+      box-shadow: 0 0 9px #66e8ff;
+      animation: scan 3.2s ease-in-out infinite;
+    }
+    .core-label { position: relative; z-index: 2; margin-top: 22px; color: #fff; font-size: 30px; font-weight: 800; letter-spacing: .6px; }
+    .core-chip {
+      position: relative;
+      z-index: 2;
+      margin-top: 9px;
+      padding: 7px 15px;
+      border: 1px solid rgba(95, 213, 255, .38);
+      border-radius: 999px;
+      color: #83e7ff;
+      background: rgba(34, 119, 214, .12);
+      font-size: 14px;
+      font-weight: 720;
+      letter-spacing: 1.5px;
+    }
+    .core-status { position: relative; z-index: 2; margin-top: 10px; color: rgba(222,236,255,.58); font-size: 15px; }
+    .footnote { position: absolute; left: 98px; bottom: 48px; color: rgba(207,222,248,.38); font-size: 14px; letter-spacing: .6px; }
+    .page-code { position: absolute; right: 98px; bottom: 48px; color: rgba(207,222,248,.38); font-size: 14px; letter-spacing: 1px; }
+    @keyframes branch-flow { to { stroke-dashoffset: -88; } }
+    @keyframes breathe { 50% { transform: translate(-50%, -50%) scale(1.045); opacity: .78; } }
+    @keyframes orbit { to { transform: translate(-50%, -50%) rotate(360deg); } }
+    @keyframes scan { 0%, 100% { transform: translateY(-44px); opacity: .35; } 50% { transform: translateY(44px); opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .branch, .core::before, .core::after, .scanline { animation: none; } }
+  </style>
+</head>
+<body>
+  <main class="slide" aria-label="飞书上的智能伙伴">
+    <div class="eyebrow">AI NATIVE ORGANIZATION</div>
+    <h1>飞书上的智能伙伴</h1>
+    <p class="lede">让智能伙伴持续感知、主动判断并执行，让每一天都更有序。</p>
+    <div class="brand"><img src="assets/lark-logo.png" alt="飞书"></div>
+
+    <section class="stage" aria-label="智能伙伴的六项核心能力">
+      <svg class="connectors" viewBox="0 0 1920 1080" aria-hidden="true">
+        <defs>
+          <filter id="glow-green" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glow-cyan" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glow-blue" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glow-purple" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path class="branch-base" d="M810 470 L714 388 L644 338"/><path class="branch" d="M810 470 L714 388 L644 338" stroke="#45e6c0" filter="url(#glow-green)"/>
+        <path class="branch-base" d="M765 560 L700 572 L644 572"/><path class="branch" d="M765 560 L700 572 L644 572" stroke="#4fd5ff" filter="url(#glow-cyan)"/>
+        <path class="branch-base" d="M810 650 L716 742 L644 806"/><path class="branch" d="M810 650 L716 742 L644 806" stroke="#4f8cff" filter="url(#glow-blue)"/>
+        <path class="branch-base" d="M1110 470 L1206 388 L1276 338"/><path class="branch" d="M1110 470 L1206 388 L1276 338" stroke="#8f74ff" filter="url(#glow-purple)"/>
+        <path class="branch-base" d="M1155 560 L1220 572 L1276 572"/><path class="branch" d="M1155 560 L1220 572 L1276 572" stroke="#b36dff" filter="url(#glow-purple)"/>
+        <path class="branch-base" d="M1110 650 L1204 742 L1276 806"/><path class="branch" d="M1110 650 L1204 742 L1276 806" stroke="#e269ff" filter="url(#glow-purple)"/>
+        <circle class="node-dot" cx="644" cy="338" r="7" stroke="#45e6c0"/><circle class="node-dot" cx="644" cy="572" r="7" stroke="#4fd5ff"/><circle class="node-dot" cx="644" cy="806" r="7" stroke="#4f8cff"/>
+        <circle class="node-dot" cx="1276" cy="338" r="7" stroke="#8f74ff"/><circle class="node-dot" cx="1276" cy="572" r="7" stroke="#b36dff"/><circle class="node-dot" cx="1276" cy="806" r="7" stroke="#e269ff"/>
+      </svg>
+
+      <div class="cards">
+        <article class="card card-left row-1" style="--accent:#45e6c0">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><path d="M8 11h24a6 6 0 0 1 6 6v9a6 6 0 0 1-6 6H20l-8 6v-6H8a6 6 0 0 1-6-6v-9a6 6 0 0 1 6-6Z"/><path d="M16 18h14M16 24h9"/><path d="M32 8h7a6 6 0 0 1 6 6v9a6 6 0 0 1-5 5"/></svg></div>
+          <div class="kicker">监测与响应</div><h2>群聊舆情监测</h2><p>全天候盯着指定聊天群，即时汇总关键讨论与行动项。</p>
+        </article>
+        <article class="card card-left row-2" style="--accent:#4fd5ff">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="13"/><path d="m31 31 11 11M8 21h26M21 8a22 22 0 0 1 0 26M21 8a22 22 0 0 0 0 26"/></svg></div>
+          <div class="kicker">信息获取</div><h2>全网情报查询</h2><p>按需查询企业背景、行业全网产品数据与市场趋势。</p>
+        </article>
+        <article class="card card-left row-3" style="--accent:#4f8cff">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><path d="M7 20v10h8l18 9V11l-18 9H7Z"/><path d="M15 30l3 10h8l-4-7M38 18a9 9 0 0 1 0 14M41 13a15 15 0 0 1 0 24"/></svg></div>
+          <div class="kicker">生成与执行</div><h2>定时任务生成（产品 VOC）</h2><p>自动定时收集、生成并下发产品 VOC 报告任务。</p>
+        </article>
+        <article class="card card-right row-1" style="--accent:#8f74ff">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="33" rx="5"/><path d="M6 18h36M15 5v8M33 5v8M16 30l6 6 12-13"/></svg></div>
+          <div class="kicker">自我管理</div><h2>每日工作自动化复盘</h2><p>自动化整理我全天的会议记录、邮件与关键产出。</p>
+        </article>
+        <article class="card card-right row-2" style="--accent:#b36dff">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><path d="M12 35h24l-3-5V19a9 9 0 0 0-18 0v11l-3 5Z"/><path d="M20 40a5 5 0 0 0 8 0M24 5v4M8 11l4 4M40 11l-4 4"/></svg></div>
+          <div class="kicker">响应与执行</div><h2>精准日程提醒</h2><p>时刻提醒即将来临的会议与关键截止日期。</p>
+        </article>
+        <article class="card card-right row-3" style="--accent:#e269ff">
+          <div class="card-icon"><svg viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="5"/><path d="M24 6v36M6 24h36M11 14h7M30 14h7M11 34h7M30 34h7"/></svg></div>
+          <div class="kicker">智能决策支持</div><h2>智能日程分级（EIS 矩阵）</h2><p>自动按重要性与紧急程度对所有日程进行分类与排序。</p>
+        </article>
+      </div>
+
+      <div class="core" aria-label="我的数字分身">
+        <div class="avatar-shell"><svg viewBox="0 0 96 96"><circle cx="48" cy="34" r="17"/><path d="M18 80c3-20 15-30 30-30s27 10 30 30"/><path d="M20 23 10 28v40l10 5M76 23l10 5v40l-10 5"/></svg><span class="scanline"></span></div>
+        <div class="core-label">我的数字分身</div>
+        <div class="core-chip">aily智能体伙伴</div>
+        <div class="core-status">更多场景等待挖掘</div>
+      </div>
+    </section>
+    <div class="footnote">汇顶 × 飞书｜AI 原生组织</div>
+    <div class="page-code">CTRL-20260805-HUIDING-004</div>
+  </main>
+</body>
+</html>

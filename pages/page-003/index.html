@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page 6 | AI拥有了“手和脚”，从回答问题走向完成工作</title>
+  <style>
+    :root {
+      --bg-0: #050711;
+      --bg-1: #071326;
+      --text: #f7fbff;
+      --muted: #aeb8c9;
+      --line: rgba(180, 203, 255, 0.18);
+      --blue: #42c8ff;
+      --cyan: #6ef3d6;
+      --violet: #8d76ff;
+      --purple: #bd7cff;
+      --agent: #7c6dff;
+      font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      width: 1920px;
+      height: 1080px;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at 76% 28%, rgba(124, 109, 255, 0.34), transparent 31%),
+        radial-gradient(circle at 60% 76%, rgba(66, 200, 255, 0.2), transparent 30%),
+        linear-gradient(142deg, var(--bg-0) 0%, var(--bg-1) 53%, #10081f 100%);
+      color: var(--text);
+    }
+
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      padding: 70px 92px 48px;
+      overflow: hidden;
+      isolation: isolate;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    .slide::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 82% 56%, rgba(141, 118, 255, 0.22), transparent 26%),
+        linear-gradient(90deg, rgba(4, 7, 15, 0.72), rgba(4, 9, 20, 0.18) 46%, rgba(12, 7, 25, 0.2));
+    }
+
+    .slide::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at center, transparent 44%, rgba(0, 0, 0, 0.5));
+      pointer-events: none;
+    }
+
+    .brand {
+      position: absolute;
+      top: 70px;
+      right: 92px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 6;
+      color: rgba(248, 251, 255, 0.94);
+      font-size: 30px;
+      line-height: 1;
+      font-weight: 780;
+      animation: fade-down 600ms ease 120ms both;
+    }
+
+    .brand img {
+      display: block;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 20px rgba(66, 200, 255, 0.22));
+    }
+
+    .ambient-icons {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .sys {
+      position: absolute;
+      min-width: 92px;
+      height: 34px;
+      padding: 0 14px;
+      border: 1px solid rgba(168, 188, 226, 0.16);
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      color: rgba(214, 225, 242, 0.32);
+      font-size: 15px;
+      font-weight: 760;
+      background: rgba(255, 255, 255, 0.035);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .sys:nth-child(1) { left: 1040px; top: 213px; }
+    .sys:nth-child(2) { left: 1285px; top: 292px; }
+    .sys:nth-child(3) { left: 1510px; top: 383px; }
+    .sys:nth-child(4) { left: 1116px; top: 825px; }
+    .sys:nth-child(5) { left: 1442px; top: 778px; }
+    .sys:nth-child(6) { left: 1600px; top: 672px; }
+
+    .header {
+      position: relative;
+      z-index: 3;
+      height: 180px;
+      padding-top: 5px;
+      animation: fade-up 640ms cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 22px;
+      color: rgba(208, 218, 237, 0.78);
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 760;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 46px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--blue), var(--violet));
+      box-shadow: 0 0 22px rgba(66, 200, 255, 0.56);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 62px;
+      line-height: 72px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin-top: 13px;
+      max-width: 1100px;
+      color: rgba(218, 229, 247, 0.78);
+      font-size: 26px;
+      line-height: 36px;
+      font-weight: 560;
+    }
+
+    .main {
+      position: relative;
+      z-index: 3;
+      height: 764px;
+      display: grid;
+      grid-template-columns: 40% 7% 53%;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .panel {
+      position: relative;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 26px 76px rgba(0, 0, 0, 0.32);
+    }
+
+    .classic {
+      height: 600px;
+      padding: 42px 42px 34px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.025)),
+        rgba(48, 56, 72, 0.28);
+      color: rgba(238, 243, 250, 0.82);
+      transform: translateY(8px);
+      animation: fade-right 700ms ease 260ms both;
+    }
+
+    .classic::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%);
+      opacity: 0.5;
+    }
+
+    .agent {
+      height: 690px;
+      padding: 46px 48px 36px;
+      background:
+        radial-gradient(circle at 80% 18%, rgba(110, 243, 214, 0.22), transparent 26%),
+        linear-gradient(140deg, rgba(66, 200, 255, 0.17), rgba(124, 109, 255, 0.24) 48%, rgba(189, 124, 255, 0.2)),
+        rgba(12, 17, 39, 0.82);
+      border-color: rgba(126, 146, 255, 0.46);
+      box-shadow: 0 0 0 1px rgba(110, 243, 214, 0.08), 0 38px 110px rgba(91, 98, 255, 0.26);
+      animation: fade-left 700ms ease 360ms both;
+    }
+
+    .panel-title {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 22px;
+      margin-bottom: 30px;
+    }
+
+    .panel-title h2 {
+      margin: 0;
+      font-size: 38px;
+      line-height: 44px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .tag {
+      min-width: 92px;
+      height: 32px;
+      padding: 0 14px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: rgba(243, 247, 255, 0.78);
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .agent .tag {
+      color: #061225;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      border: 0;
+      box-shadow: 0 0 26px rgba(66, 200, 255, 0.4);
+    }
+
+    .flow {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 15px;
+    }
+
+    .node {
+      position: relative;
+      min-height: 76px;
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      align-items: center;
+      gap: 17px;
+      padding: 15px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.055);
+    }
+
+    .classic .node {
+      background: rgba(255, 255, 255, 0.048);
+      color: rgba(235, 241, 250, 0.78);
+    }
+
+    .agent .node {
+      min-height: 75px;
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(190, 209, 255, 0.26);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .node::after {
+      content: "";
+      position: absolute;
+      left: 41px;
+      bottom: -15px;
+      width: 2px;
+      height: 15px;
+      background: rgba(208, 219, 237, 0.26);
+    }
+
+    .node:last-child::after {
+      display: none;
+    }
+
+    .agent .node::after {
+      background: linear-gradient(var(--cyan), var(--violet));
+      box-shadow: 0 0 18px rgba(110, 243, 214, 0.42);
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 20px;
+      font-weight: 900;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .agent .icon {
+      color: #061225;
+      background: linear-gradient(135deg, var(--cyan), var(--blue), var(--violet));
+      border: 0;
+      box-shadow: 0 0 22px rgba(66, 200, 255, 0.32);
+    }
+
+    .node h3 {
+      margin: 0;
+      font-size: 25px;
+      line-height: 32px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .node p {
+      margin: 4px 0 0;
+      color: rgba(217, 228, 246, 0.62);
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 560;
+    }
+
+    .agent .node p {
+      color: rgba(232, 240, 255, 0.72);
+    }
+
+    .keywords {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .keyword {
+      height: 30px;
+      padding: 0 12px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: rgba(226, 234, 246, 0.62);
+      font-size: 14px;
+      font-weight: 740;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .agent .keyword {
+      color: rgba(244, 249, 255, 0.9);
+      background: rgba(95, 211, 255, 0.1);
+      border-color: rgba(126, 223, 255, 0.22);
+    }
+
+    .bridge {
+      height: 170px;
+      display: grid;
+      place-items: center;
+      animation: bridge-in 760ms ease 700ms both;
+    }
+
+    .bridge-box {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 0 45px rgba(91, 98, 255, 0.22);
+    }
+
+    .bridge-box::before,
+    .bridge-box::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(94, 215, 255, 0.75));
+    }
+
+    .bridge-box::before {
+      right: 100%;
+    }
+
+    .bridge-box::after {
+      left: 100%;
+      background: linear-gradient(90deg, rgba(94, 215, 255, 0.75), transparent);
+    }
+
+    .arrow {
+      color: #ffffff;
+      font-size: 50px;
+      line-height: 1;
+      font-weight: 700;
+      text-shadow: 0 0 24px rgba(94, 215, 255, 0.56);
+    }
+
+    .bridge-label {
+      position: absolute;
+      top: 152px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
+      text-align: center;
+      color: rgba(232, 240, 255, 0.86);
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 860;
+    }
+
+    .factors {
+      position: relative;
+      z-index: 2;
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .factor {
+      min-height: 72px;
+      padding: 13px 11px;
+      border-radius: 8px;
+      border: 1px solid rgba(126, 223, 255, 0.2);
+      background: rgba(6, 18, 37, 0.44);
+    }
+
+    .factor strong {
+      display: block;
+      color: #ffffff;
+      font-size: 17px;
+      line-height: 22px;
+      font-weight: 820;
+    }
+
+    .factor span {
+      display: block;
+      margin-top: 3px;
+      color: rgba(222, 233, 250, 0.62);
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 650;
+    }
+
+    .takeaway {
+      position: relative;
+      z-index: 3;
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid rgba(177, 199, 235, 0.16);
+      color: rgba(238, 244, 255, 0.78);
+      font-size: 36px;
+      line-height: 46px;
+      font-weight: 780;
+      animation: fade-up 650ms ease 980ms both;
+    }
+
+    .takeaway span {
+      margin-left: 20px;
+      color: #ffffff;
+      text-shadow: 0 0 22px rgba(110, 243, 214, 0.35);
+    }
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-down {
+      from { opacity: 0; transform: translateY(-14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fade-right {
+      from { opacity: 0; transform: translateX(-24px) translateY(8px); }
+      to { opacity: 1; transform: translateX(0) translateY(8px); }
+    }
+
+    @keyframes fade-left {
+      from { opacity: 0; transform: translateX(28px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes bridge-in {
+      from { opacity: 0; transform: scale(0.88); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide" aria-label="AI拥有了“手和脚”，从回答问题走向完成工作">
+    <div class="ambient-icons" aria-hidden="true">
+      <div class="sys">Browser</div>
+      <div class="sys">ERP</div>
+      <div class="sys">CRM</div>
+      <div class="sys">Mail</div>
+      <div class="sys">Approval</div>
+      <div class="sys">Base</div>
+    </div>
+
+    <div class="brand" aria-label="飞书">
+      <img src="../../assets/logos/feishu.svg" alt="">
+      <span>飞书</span>
+    </div>
+
+    <header class="header">
+      <div class="eyebrow">第一章 · AI正在成为新的生产力</div>
+      <h1>AI拥有了“手和脚”，从回答问题走向完成工作</h1>
+      <div class="subtitle">从“能回答”到“能执行”，Agent让AI第一次真正进入业务动作。</div>
+    </header>
+
+    <section class="main" aria-label="从回答问题到完成工作">
+      <article class="panel classic" aria-label="传统AI">
+        <div class="panel-title">
+          <h2>传统AI</h2>
+          <div class="tag">Answer</div>
+        </div>
+
+        <div class="flow">
+          <div class="node">
+            <div class="icon">?</div>
+            <div>
+              <h3>输入问题</h3>
+              <p>人提出一个明确问题</p>
+            </div>
+          </div>
+          <div class="node">
+            <div class="icon">A</div>
+            <div>
+              <h3>生成答案</h3>
+              <p>AI负责回答、写作、总结、翻译</p>
+            </div>
+          </div>
+          <div class="node">
+            <div class="icon">人</div>
+            <div>
+              <h3>人工执行</h3>
+              <p>剩下的工作仍然需要人完成</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="keywords">
+          <span class="keyword">会聊天</span>
+          <span class="keyword">会写作</span>
+          <span class="keyword">会总结</span>
+          <span class="keyword">会翻译</span>
+        </div>
+      </article>
+
+      <div class="bridge" aria-hidden="true">
+        <div class="bridge-box">
+          <div class="arrow">→</div>
+          <div class="bridge-label">Answer → Action</div>
+        </div>
+      </div>
+
+      <article class="panel agent" aria-label="Agent">
+        <div class="panel-title">
+          <h2>Agent</h2>
+          <div class="tag">Action</div>
+        </div>
+
+        <div class="flow">
+          <div class="node">
+            <div class="icon">目</div>
+            <div>
+              <h3>输入目标</h3>
+              <p>不只是提问，而是交给AI一个要完成的业务目标</p>
+            </div>
+          </div>
+          <div class="node">
+            <div class="icon">划</div>
+            <div>
+              <h3>理解目标并规划步骤</h3>
+              <p>拆解任务、判断路径、决定下一步行动</p>
+            </div>
+          </div>
+          <div class="node">
+            <div class="icon">接</div>
+            <div>
+              <h3>调用工具进入系统</h3>
+              <p>打开浏览器、查询ERP、调用CRM、写邮件、发起审批</p>
+            </div>
+          </div>
+          <div class="node">
+            <div class="icon">交</div>
+            <div>
+              <h3>执行流程并交付结果</h3>
+              <p>更新业务数据，完成工作流，最终把结果交回来</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="factors" aria-label="2026质变的四个关键因素">
+          <div class="factor">
+            <strong>Reasoning</strong>
+            <span>推理模型成熟</span>
+          </div>
+          <div class="factor">
+            <strong>Tool Calling</strong>
+            <span>工具调用成熟</span>
+          </div>
+          <div class="factor">
+            <strong>MCP</strong>
+            <span>连接能力成熟</span>
+          </div>
+          <div class="factor">
+            <strong>Computer Use</strong>
+            <span>拥有操作能力</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <footer class="takeaway">过去，AI回答问题；<span>今天，AI完成工作。</span></footer>
+  </main>
+</body>
+</html>

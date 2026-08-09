@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "product": "MineM",
+  "productVersion": "0.5.0-beta.8",
+  "format": "html",
+  "report": {
+    "id": "created-report-20260806-230359-a152692771",
+    "code": "RPT-20260806-002",
+    "title": "钛动科技"
+  },
+  "pageCount": 30,
+  "pages": [
+    {
+      "order": 1,
+      "title": "AI时代新的工作方式",
+      "code": "CTRL-PAGE-320",
+      "source": "pages/page-001/index.html"
+    },
+    {
+      "order": 2,
+      "title": "02 ai revolution opening",
+      "code": "CTRL-20260808-001-002",
+      "source": "pages/page-002/index.html"
+    },
+    {
+      "order": 3,
+      "title": "06 AI拥有了“手和脚”，从回答问题走向完成工作",
+      "code": "CTRL-XSD-20260701-001-006",
+      "source": "pages/page-003/index.html"
+    },
+    {
+      "order": 4,
+      "title": "c84f086bfb index",
+      "code": "CTRL-PAGE-014",
+      "source": "pages/page-004/index.html"
+    },
+    {
+      "order": 5,
+      "title": "03 two ai capabilities",
+      "code": "CTRL-20260808-001-003",
+      "source": "pages/page-005/index.html"
+    },
+    {
+      "order": 6,
+      "title": "04 ai manager clone",
+      "code": "CTRL-20260808-001-004",
+      "source": "pages/page-006/index.html"
+    },
+    {
+      "order": 7,
+      "title": "飞书上的智能伙伴",
+      "code": "CTRL-20260805-HUIDING-004",
+      "source": "pages/page-007/index.html"
+    },
+    {
+      "order": 8,
+      "title": "05 reuse active chat",
+      "code": "CTRL-20260808-001-005",
+      "source": "pages/page-008/index.html"
+    },
+    {
+      "order": 9,
+      "title": "AI入会",
+      "code": "CTRL-PAGE-207",
+      "source": "pages/page-009/index.html"
+    },
+    {
+      "order": 10,
+      "title": "08 kangshifu ai reading assistant",
+      "code": "CTRL-20260808-001-008",
+      "source": "pages/page-010/index.html"
+    },
+    {
+      "order": 11,
+      "title": "09 reuse mail assistant",
+      "code": "CTRL-20260808-001-009",
+      "source": "pages/page-011/index.html"
+    },
+    {
+      "order": 12,
+      "title": "10 Insta360 经销商邮件 AI 管理",
+      "code": "CTRL-20260808-001-010",
+      "source": "pages/page-012/index.html"
+    },
+    {
+      "order": 13,
+      "title": "11 management clone fly",
+      "code": "CTRL-20260808-001-011",
+      "source": "pages/page-013/index.html"
+    },
+    {
+      "order": 14,
+      "title": "12 employee innovation assistant divider",
+      "code": "CTRL-20260808-001-012",
+      "source": "pages/page-014/index.html"
+    },
+    {
+      "order": 15,
+      "title": "13 多维表格：工程思维训练场",
+      "code": "CTRL-20260808-001-013",
+      "source": "pages/page-015/index.html"
+    },
+    {
+      "order": 16,
+      "title": "14 用户原声：多维表格承接 VOC 闭环",
+      "code": "CTRL-20260808-001-014",
+      "source": "pages/page-016/index.html"
+    },
+    {
+      "order": 17,
+      "title": "多维表格打通跨团队协同，课后服务让家长学生更满意",
+      "code": "CTRL-PAGE-358",
+      "source": "pages/page-017/import-20260809-003842-eaf310a7.html"
+    },
+    {
+      "order": 18,
+      "title": "16 视频制作：多维表格串起制作流程",
+      "code": "CTRL-20260808-001-016",
+      "source": "pages/page-018/index.html"
+    },
+    {
+      "order": 19,
+      "title": "17 AI正在重新定义软件",
+      "code": "CTRL-20260808-001-017",
+      "source": "pages/page-019/index.html"
+    },
+    {
+      "order": 20,
+      "title": "18 doubao demo finance budget｜品牌看板视频",
+      "code": "CTRL-PAGE-440",
+      "source": "pages/page-020/index.html"
+    },
+    {
+      "order": 21,
+      "title": "19 doubao demo table to system",
+      "code": "CTRL-20260808-001-019",
+      "source": "pages/page-021/index.html"
+    },
+    {
+      "order": 22,
+      "title": "几张表格，变成团队的业务系统（点击播放视频）",
+      "code": "CTRL-PAGE-439",
+      "source": "pages/page-022/index.html"
+    },
+    {
+      "order": 23,
+      "title": "21 enterprise digital employees",
+      "code": "CTRL-20260808-001-021",
+      "source": "pages/page-023/index.html"
+    },
+    {
+      "order": 24,
+      "title": "22 ai digital employees on duty",
+      "code": "CTRL-20260808-001-022",
+      "source": "pages/page-024/index.html"
+    },
+    {
+      "order": 25,
+      "title": "零一数科｜AI-CRM 从对话采集到经营决策的完整闭环",
+      "code": "CTRL-PAGE-355",
+      "source": "pages/page-025/index.html"
+    },
+    {
+      "order": 26,
+      "title": "神州数码｜把培训运营从人工追进度变成一键执行与一图全览",
+      "code": "CTRL-PAGE-424",
+      "source": "pages/page-026/index.html"
+    },
+    {
+      "order": 27,
+      "title": "客诉AI自动排单",
+      "code": "CTRL-PAGE-444",
+      "source": "pages/page-027/index.html"
+    },
+    {
+      "order": 28,
+      "title": "领星：AI服务台解决1100+员工咨询问题，人效提升400%",
+      "code": "CTRL-PAGE-441",
+      "source": "pages/page-028/import-20260809-110805-9753d22b.html"
+    },
+    {
+      "order": 29,
+      "title": "35 不要为了AI而AI，要为了经营而AI",
+      "code": "CTRL-XSD-20260701-001-035",
+      "source": "pages/page-029/index.html"
+    },
+    {
+      "order": 30,
+      "title": "36 先进团队 先用飞书",
+      "code": "CTRL-XSD-20260701-001-036",
+      "source": "pages/page-030/index.html"
+    }
+  ],
+  "exportedAt": 1786246475667,
+  "mediaPolicy": "媒体文件按原始字节复制，不作重新编码或压缩"
+}

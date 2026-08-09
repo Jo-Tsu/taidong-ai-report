@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<style id="minem-embedded-preview-style">
+  #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
+  .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
+  [data-minem-page-tools], [data-slide-navigation], [data-deck-navigation] {
+    display: none !important;
+  }
+  /* Let the platform canvas own the embedding viewport so source pages are
+     not letterboxed a second time inside the report viewer. */
+  html, body { width: 100% !important; height: 100% !important; }
+  .material-control-stage {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    --fs-scale: 1 !important;
+  }
+</style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="minem-canvas" content="1920x1080">
+  <meta name="minem-case-revision" content="2">
+  <title>神州数码｜培训运营驾驶舱</title>
+  <style>
+    :root {
+      --scale: 1;
+      --background: #06111f;
+      --surface: rgba(12, 31, 50, 0.96);
+      --surface-strong: #102a44;
+      --text: #f5f9ff;
+      --muted: #a9bfd2;
+      --line: rgba(146, 190, 229, 0.2);
+      --brand: #4c8dff;
+      --green: #5ce0bd;
+      --amber: #ffd16d;
+      --red: #ff8f96;
+    }
+    * { box-sizing: border-box; }
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #02070d;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    button { font: inherit; }
+    .slide {
+      position: relative;
+      width: 1920px;
+      height: 1080px;
+      flex: none;
+      overflow: hidden;
+      padding: 38px 64px 34px;
+      transform: scale(var(--scale));
+      background:
+        radial-gradient(circle at 82% 0%, rgba(47, 124, 234, 0.22), transparent 30%),
+        radial-gradient(circle at 8% 85%, rgba(36, 197, 172, 0.09), transparent 28%),
+        linear-gradient(139deg, #05111f 0%, #091c2d 58%, #07131f 100%);
+    }
+    .slide::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+    .brand-lockup {
+      position: absolute;
+      top: 31px;
+      right: 64px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 55px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      background: rgba(4, 15, 27, 0.9);
+    }
+    .customer-wordmark {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      line-height: 1.12;
+    }
+    .customer-wordmark strong { font-size: 21px; }
+    .customer-wordmark span {
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .brand-divider {
+      width: 1px;
+      height: 31px;
+      background: rgba(255, 255, 255, 0.22);
+    }
+    .feishu {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .feishu img {
+      display: block;
+      width: 29px;
+      height: 29px;
+      object-fit: contain;
+    }
+    .eyebrow {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      color: var(--green);
+      font-size: 18px;
+      font-weight: 850;
+      letter-spacing: 0.02em;
+    }
+    h1 {
+      position: relative;
+      z-index: 2;
+      max-width: 1320px;
+      margin: 9px 0 5px;
+      font-size: 45px;
+      line-height: 1.1;
+      letter-spacing: -1.4px;
+    }
+    .subtitle {
+      position: relative;
+      z-index: 2;
+      margin: 0;
+      color: #bdcddd;
+      font-size: 18px;
+      line-height: 1.4;
+    }
+    .metrics {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      gap: 9px;
+      margin-top: 13px;
+    }
+    .metric {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      background: rgba(13, 34, 54, 0.88);
+    }
+    .metric b {
+      color: var(--brand);
+      font-size: 24px;
+      line-height: 1;
+    }
+    .metric:nth-child(2) b { color: var(--green); }
+    .metric:nth-child(3) b { color: var(--amber); }
+    .metric:nth-child(4) b { color: #a9bfff; }
+    .metric span {
+      color: #b8cadb;
+      font-size: 14px;
+    }
+    .metric small {
+      color: #7590a7;
+      font-size: 11px;
+    }
+    .story {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr 1.08fr;
+      gap: 14px;
+      height: 725px;
+      margin-top: 15px;
+    }
+    .module {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+    }
+    .module-head {
+      min-height: 61px;
+    }
+    .module-head strong {
+      display: block;
+      font-size: 19px;
+      line-height: 1.2;
+    }
+    .module-head strong i {
+      display: inline-grid;
+      place-items: center;
+      width: 27px;
+      height: 27px;
+      margin-right: 8px;
+      border-radius: 7px;
+      background: #315f9e;
+      font-size: 13px;
+      font-style: normal;
+    }
+    .module-head p {
+      margin: 5px 0 0;
+      color: #aec0d1;
+      font-size: 13.5px;
+      line-height: 1.35;
+    }
+    .media {
+      position: relative;
+      display: block;
+      width: 100%;
+      overflow: hidden;
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      background: #eef3f8;
+      color: inherit;
+      cursor: zoom-in;
+      text-align: left;
+    }
+    .media::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: inherit;
+    }
+    .media:focus-visible {
+      outline: 3px solid var(--brand);
+      outline-offset: 2px;
+    }
+    .media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #eef3f8;
+    }
+    .media-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      z-index: 2;
+      padding: 5px 8px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+      background: rgba(4, 15, 27, 0.91);
+      color: #fff;
+      font-size: 12.5px;
+      font-weight: 850;
+    }
+    .caption {
+      position: absolute;
+      right: 7px;
+      bottom: 7px;
+      left: 7px;
+      z-index: 2;
+      padding: 6px 8px;
+      border-radius: 6px;
+      background: rgba(4, 15, 27, 0.89);
+      color: #dce9f4;
+      font-size: 11.5px;
+      line-height: 1.32;
+    }
+    .pain-visual {
+      height: 305px;
+      margin-top: 3px;
+    }
+    .pain-visual img {
+      object-fit: cover;
+      object-position: center;
+    }
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 9px;
+    }
+    .before-after div {
+      min-height: 103px;
+      padding: 9px;
+      border-radius: 8px;
+      background: #102b44;
+      color: #c4d5e4;
+      font-size: 12.5px;
+      line-height: 1.42;
+    }
+    .before-after b {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--red);
+      font-size: 13px;
+    }
+    .before-after div:last-child b { color: var(--green); }
+    .pain-points {
+      display: grid;
+      gap: 7px;
+      margin-top: 9px;
+    }
+    .pain-point {
+      display: flex;
+      gap: 8px;
+      padding: 7px 9px;
+      border-left: 3px solid rgba(255, 143, 150, 0.75);
+      background: rgba(255, 143, 150, 0.065);
+      color: #c8d7e5;
+      font-size: 12.5px;
+      line-height: 1.35;
+    }
+    .pain-point b { color: #fff; }
+    .action-grid {
+      display: grid;
+      grid-template-rows: 1.1fr 0.9fr;
+      gap: 9px;
+      height: 638px;
+    }
+    .action-grid .main { height: 100%; }
+    .action-grid .main img {
+      object-fit: cover;
+      object-position: top center;
+    }
+    .action-secondary {
+      display: grid;
+      grid-template-columns: 1fr 0.92fr;
+      gap: 9px;
+      min-height: 0;
+    }
+    .action-secondary .media { height: 100%; }
+    .action-secondary .media img {
+      object-fit: cover;
+      object-position: top left;
+    }
+    .action-secondary .assistant img {
+      object-fit: contain;
+      object-position: top center;
+    }
+    .result-grid {
+      display: grid;
+      grid-template-rows: 0.92fr 1.08fr;
+      gap: 9px;
+      height: 638px;
+    }
+    .result-grid > .media {
+      height: 100%;
+    }
+    .result-grid > .media img {
+      object-fit: cover;
+      object-position: top left;
+    }
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      min-height: 0;
+    }
+    .evidence-grid .media { height: 100%; }
+    .evidence-grid .media img {
+      object-fit: cover;
+      object-position: top left;
+    }
+    .evidence-grid .media img {
+      object-fit: cover;
+      object-position: top center;
+    }
+    .source,
+    .page-code {
+      position: absolute;
+      bottom: 15px;
+      z-index: 3;
+      color: #718ca2;
+      font-size: 12.5px;
+    }
+    .source { left: 64px; }
+    .page-code { right: 64px; }
+    dialog {
+      width: 100vw;
+      height: 100vh;
+      max-width: none;
+      max-height: none;
+      overflow: hidden;
+      padding: 28px 38px 34px;
+      border: 0;
+      background: rgba(0, 5, 12, 0.965);
+      color: #fff;
+    }
+    dialog::backdrop { background: rgba(0, 0, 0, 0.82); }
+    .lightbox-body {
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      gap: 13px;
+      width: 100%;
+      height: 100%;
+    }
+    .lightbox-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-right: 62px;
+    }
+    .lightbox-title {
+      font-size: 21px;
+      font-weight: 800;
+    }
+    .lightbox-proof {
+      color: #a9bfd2;
+      font-size: 14px;
+    }
+    .lightbox-frame {
+      display: grid;
+      min-height: 0;
+      place-items: center;
+    }
+    .lightbox-frame img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .close {
+      position: fixed;
+      top: 22px;
+      right: 28px;
+      width: 48px;
+      height: 48px;
+      border: 0;
+      border-radius: 50%;
+      background: #fff;
+      color: #07111f;
+      font-size: 31px;
+      line-height: 1;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="slide" data-minem-page data-canvas-width="1920" data-canvas-height="1080">
+    <div class="brand-lockup">
+      <span class="customer-wordmark">
+        <strong>神州数码集团</strong>
+      </span>
+      <span class="brand-divider"></span>
+      <span class="feishu"><img src="assets/feishu-logo.svg" alt="飞书 Logo">飞书</span>
+    </div>
+
+    <p class="eyebrow">客户案例｜新员工培训运营</p>
+    <h1>培训运营驾驶舱</h1>
+
+    <section class="metrics" aria-label="案例场景与能力口径">
+      <div class="metric"><b>5000+</b><span>场景员工规模</span><small>原文示例</small></div>
+      <div class="metric"><b>每月 1 次</b><span>线下入职培训</span><small>北京平台示例</small></div>
+      <div class="metric"><b>单期 50+</b><span>参训人数</span><small>原文示例</small></div>
+      <div class="metric"><b>24 小时</b><span>AI 助教在线答疑</span></div>
+    </section>
+
+    <section class="story">
+      <article class="module">
+        <div class="module-head">
+          <strong><i>01</i>原有链路：人工依赖高、数据难沉淀</strong>
+          <p>需求调研、培训通知与作业评阅分散在第三方问卷、Excel、邮件、微信、电话和本地文件中</p>
+        </div>
+        <button class="media pain-visual" type="button"
+          data-full="assets/01-pain-workflow.jpg"
+          data-title="培训运营原有工作链路"
+          data-proof="证明原流程涉及多工具、多角色和多次人工搬运。">
+          <span class="media-tag">原有培训运营链路</span>
+          <img src="assets/01-pain-workflow.jpg" alt="培训运营原有工作链路画板">
+          <span class="caption">链条长、时效差、人工成本高，过程数据容易分散或遗失</span>
+        </button>
+        <div class="before-after">
+          <div><b>Before｜人工搬运</b>第三方问卷收集，Excel 透视，再通过邮件反馈和汇报</div>
+          <div><b>After｜同一驾驶舱</b>表单、查询、自动化、AI 与仪表盘形成连续运营链路</div>
+        </div>
+        <div class="pain-points">
+          <div class="pain-point"><b>通知</b><span>人工把文字对应到人头，无法快速 @ 到相关负责人</span></div>
+          <div class="pain-point"><b>作业</b><span>Word / PDF 下载打包后交讲师，批阅与公布流程长</span></div>
+          <div class="pain-point"><b>数据</b><span>信息散落在纸质文档和个人电脑，难以持续分析</span></div>
+        </div>
+      </article>
+
+      <article class="module">
+        <div class="module-head">
+          <strong><i>02</i>一键直达：轻轻一点，完成运营动作</strong>
+          <p>驾驶舱统一触发发通知、建群组、建日程、催进度；AI 生成通知文本并以问答机器人承接学员咨询</p>
+        </div>
+        <div class="action-grid">
+          <button class="media main" type="button"
+            data-full="assets/02-training-cockpit.png"
+            data-title="培训运营驾驶舱主界面"
+            data-proof="证明运营人员可以从同一界面触发多个自动化动作。">
+            <span class="media-tag">培训运营驾驶舱</span>
+            <img src="assets/02-training-cockpit.png" alt="培训运营驾驶舱主界面">
+            <span class="caption">按钮触发自动化流程，把分散动作收进同一操作入口</span>
+          </button>
+          <div class="action-secondary">
+            <button class="media" type="button"
+              data-full="assets/04-ai-generated-text.png"
+              data-title="AI 生成通知文本"
+              data-proof="证明自动化流程可以调用 AI 生成有针对性的通知内容。">
+              <span class="media-tag">AI 生成文本</span>
+              <img src="assets/04-ai-generated-text.png" alt="AI 生成培训通知文本界面">
+            </button>
+            <button class="media assistant" type="button"
+              data-full="assets/08-ai-training-assistant.png"
+              data-title="群聊中的 AI 培训助教"
+              data-proof="证明 AI 助教在真实群聊中按步骤回答学员问题。">
+              <span class="media-tag">AI 培训助教</span>
+              <img src="assets/08-ai-training-assistant.png" alt="AI 培训助教在群聊中回答问题">
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="module">
+        <div class="module-head">
+          <strong><i>03</i>一图全览：过程数据实时可见、结果立等可查</strong>
+          <p>仪表盘展示核心指标；AI 字段捷径生成作业成绩与反馈，学员提交后可以直接查询结果</p>
+        </div>
+        <div class="result-grid">
+          <button class="media" type="button"
+            data-full="assets/03-data-dashboard.png"
+            data-title="培训项目数据仪表盘"
+            data-proof="证明项目指标可以通过柱状图、饼图、雷达图和词云实时展示。">
+            <span class="media-tag">项目数据看板</span>
+            <img src="assets/03-data-dashboard.png" alt="培训项目数据仪表盘">
+            <span class="caption">相关方随时查看核心指标和过程数据，不再等待人工汇总</span>
+          </button>
+          <div class="evidence-grid">
+            <button class="media" type="button"
+              data-full="assets/06-ai-assignment-grading.png"
+              data-title="AI 字段捷径生成作业成绩与反馈"
+              data-proof="证明作业提交后可由 AI 自动生成成绩、总结和反馈。">
+              <span class="media-tag">AI 作业评阅</span>
+              <img src="assets/06-ai-assignment-grading.png" alt="AI 生成作业成绩和反馈">
+            </button>
+            <button class="media" type="button"
+              data-full="assets/07-learner-result-query.png"
+              data-title="学员查询作业成绩与反馈"
+              data-proof="证明学员提交作业后可以直接查阅 AI 生成的结果。">
+              <span class="media-tag">学员结果查询</span>
+              <img src="assets/07-learner-result-query.png" alt="学员查询作业成绩和反馈">
+            </button>
+            <button class="media" type="button"
+              data-full="assets/05-ai-notification-automation.png"
+              data-title="自动化流程调用 AI 生成通知"
+              data-proof="证明 AI 文本能力已经进入实际通知与消息自动化流程。">
+              <span class="media-tag">自动化 + AI</span>
+              <img src="assets/05-ai-notification-automation.png" alt="自动化流程使用 AI 生成通知消息">
+            </button>
+            <button class="media" type="button"
+              data-full="assets/09-template-library.png"
+              data-title="模板库中的培训运营驾驶舱"
+              data-proof="证明该方案已作为培训运营模板进入多维表格模板库，具备复用入口。">
+              <span class="media-tag">模板化复用</span>
+              <img src="assets/09-template-library.png" alt="多维表格模板库中的培训运营驾驶舱">
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <div class="source">来源：神州数码集团人力资源部《培训运营驾驶舱》· 9 份原始证据全部保留</div>
+    <div class="page-code">CASE-DIGITALCHINA-20260809-001 · ONE PAGE</div>
+  </main>
+
+  <dialog aria-label="原始产品截图灯箱">
+    <div class="lightbox-body">
+      <div class="lightbox-head">
+        <span class="lightbox-title"></span>
+        <span class="lightbox-proof"></span>
+      </div>
+      <div class="lightbox-frame"><img alt="原始产品截图"></div>
+    </div>
+    <button class="close" type="button" aria-label="关闭原图">×</button>
+  </dialog>
+
+  <script>
+    const fit = () => {
+      document.documentElement.style.setProperty("--scale", Math.min(innerWidth / 1920, innerHeight / 1080));
+    };
+    addEventListener("resize", fit);
+    fit();
+
+    const dialog = document.querySelector("dialog");
+    const fullImage = dialog.querySelector(".lightbox-frame img");
+    const title = dialog.querySelector(".lightbox-title");
+    const proof = dialog.querySelector(".lightbox-proof");
+    document.querySelectorAll("[data-full]").forEach((item) => {
+      item.addEventListener("click", () => {
+        fullImage.src = item.dataset.full;
+        title.textContent = item.dataset.title || "";
+        proof.textContent = item.dataset.proof || "";
+        dialog.showModal();
+      });
+    });
+    dialog.querySelector(".close").addEventListener("click", () => dialog.close());
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+  </script>
+</body>
+</html>
