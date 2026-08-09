@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+<base href="https://jo-tsu.github.io/taidong-ai-report/pages/page-001/">
 <style id="minem-embedded-preview-style">
   #minem-page-tools, .page-pill, .slide-controls, .slide-navigation,
   .slide-nav, .deck-controls, .deck-navigation, .presentation-controls,
@@ -134,10 +135,17 @@
   <script>
     const canvas = document.querySelector('.canvas');
     function fit() {
-      const scale = Math.min(innerWidth / 1920, innerHeight / 1080);
+      const vw = document.documentElement.clientWidth || innerWidth;
+      const vh = document.documentElement.clientHeight || innerHeight;
+      if (!vw || !vh) return;
+      const scale = Math.min(vw / 1920, vh / 1080);
       canvas.style.transform = `scale(${scale})`;
     }
     addEventListener('resize', fit, { passive: true });
+    addEventListener('load', fit);
+    if (window.ResizeObserver) {
+      new ResizeObserver(fit).observe(document.documentElement);
+    }
     fit();
   </script>
 </body>
